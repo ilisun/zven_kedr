@@ -5375,13 +5375,22 @@ pre {
 }
 
 .text {
-    text-align: left;
+    text-align: justify;
     line-height: 23px;
     font-weight: 400;
     margin-bottom: 20px
 }
 
 .text-highlight {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify;
+    color: #413c35;
+    font-weight: 600;
+    margin: 20px 0
+}
+
+.text-highlight-center {
     font-size: 16px;
     line-height: 26px;
     text-align: center;
@@ -6104,7 +6113,7 @@ pre {
 
 @media (min-width: 768px) {
     .jumbotron__title {
-        font-size: 50px
+        font-size: 40px
     }
 }
 
@@ -8218,7 +8227,7 @@ html.no-touch .product-overlay__stock {
 }
 
 .zocial-facebook:before {
-    content: "f"
+    content: "F"
 }
 
 .zocial-fivehundredpx:before {
@@ -8442,7 +8451,7 @@ html.no-touch .product-overlay__stock {
 }
 
 .zocial-vk:before {
-    content: "N"
+    content: "VK"
 }
 
 .zocial-weibo:before {
