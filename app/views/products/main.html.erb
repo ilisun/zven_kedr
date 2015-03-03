@@ -1,0 +1,339 @@
+<script type="text/javascript">
+    WebFontConfig = {
+        google: { families: [ 'Arvo:700:latin', 'Open+Sans:400,600,700:latin' ] }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+</script>
+
+<div class="jumbotron  js--add-gradient">
+  <div class="container">
+    <div class="jumbotron__container">
+      <img alt="Logo" src="assets/pic_dark_wood.png">
+      <h2 class="jumbotron__subtitle">
+        Официальный диллер продукции в Липецке и Липецкой области
+      </h2>
+      <h1 class="jumbotron__title">
+        Продукция новой осознанности...
+      </h1>
+    </div>
+  </div>
+</div>
+<div class="banners  push-down-30">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12  col-sm-6  col-md-3">
+        <div class="banners-box">
+          <span class="glyphicon glyphicon-earphone glyphicon--banners"></span>
+          <b class="banners__title">НАШ ТЕЛЕФОН</b>
+          +7 (909) 222-78-50
+        </div>
+      </div>
+      <div class="col-xs-12  col-sm-6  col-md-3">
+        <div class="banners-box">
+          <span class="glyphicon glyphicon-road glyphicon--banners"></span>
+          <b class="banners__title">МЫ РЯДОМ</b>
+          ТЦ «Ноябрьский»
+        </div>
+      </div>
+      <div class="col-xs-12  col-sm-6  col-md-3">
+        <div class="banners-box">
+          <span class="glyphicon glyphicon-credit-card glyphicon--banners"></span>
+          <b class="banners__title">СПОСОБ ОПЛАТЫ</b>
+          Наличный и безналичный
+        </div>
+      </div>
+      <div class="col-xs-12  col-sm-6  col-md-3">
+        <div class="banners-box">
+          <span class="glyphicon glyphicon-leaf glyphicon--banners"></span>
+          <b class="banners__title">СДЕЛАНО С ЛЮБОВЬЮ</b>
+          Из недр природы
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <!-- Navigation for products -->
+  <div class="products-navigation  push-down-15">
+    <div class="row">
+      <div class="col-xs-12  col-sm-8">
+        <div class="products-navigation__title">
+          <h3><span class="light">Кладовая</span> природы</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <div id="js--latest-products-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="row">
+
+          <% @m1_products.each do |product| %>
+            <div class="col-xs-6 col-sm-3  js--isotope-target  js--cat-5">
+              <div class="products__single">
+                <figure class="products__image">
+                  <%= image_tag product.image.url(:large), size: "260x260", alt: "#", class: "product__image" %>
+                  <div class="product-overlay">
+                    <%= link_to product, class: "product-overlay__more" do %>
+                      <span class="glyphicon glyphicon-search"></span>
+                    <% end %>
+                  </div>
+                </figure>
+                <div class="row">
+                  <div class="col-xs-8">
+                    <h5 class="products__title">
+                      <%= link_to product, class: "products__link  js--isotope-title" do %>
+                        <%= product.name %>
+                      <% end %>
+                    </h5>
+                  </div>
+                  <div class="col-xs-4">
+                    <div class="products__price">
+                      <%= product.price %> р.
+                    </div>
+                  </div>
+                </div>
+                <div class="products__category">
+                  <% product.categories.each do |category| %>
+                    <%= category.name %> <br>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banners medium -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <a href="shop.html">
+        <div class="banners--medium">
+          <span class="banners-text">Природная<strong> аптека</strong></span>
+          <span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <a href="shop.html">
+        <div class="banners--medium">
+          <span class="banners-text">Скидки, акции,<strong> новости</strong></span>
+          <span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- Navigation -->
+  <div class="products-navigation  push-down-15">
+    <div class="products-navigation__title">
+      <h3><span class="light">Новинки</span></h3>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <% @m2_products.each_with_index do |product, index| %>
+    <% if (index == 0) or (index == 4) %>
+      <div class="row">
+    <% end %>
+
+    <div class="col-xs-6 col-sm-3  js--isotope-target  js--cat-5">
+      <div class="products__single">
+        <figure class="products__image">
+          <%= image_tag product.image.url(:large), size: "260x260", alt: "#", class: "product__image" %>
+          <div class="product-overlay">
+            <a class="product-overlay__more" href="single-product.html">
+              <span class="glyphicon glyphicon-search"></span>
+            </a>
+          </div>
+        </figure>
+        <div class="row">
+          <div class="col-xs-8">
+            <h5 class="products__title">
+              <%= link_to product, class: "products__link  js--isotope-title" do %>
+                <%= product.name %>
+              <% end %>
+            </h5>
+          </div>
+          <div class="col-xs-4">
+            <div class="products__price">
+              <%= product.price %> р.
+            </div>
+          </div>
+        </div>
+        <div class="products__category">
+          <% product.categories.each do |category| %>
+            <%= category.name %> <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <% if (index == 3) or (index == 7) %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <!-- Banners big -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="widgets__navigation">
+        <div class="widgets__heading--line">
+          <h4 class="widgets__heading">Для детей</h4>
+        </div>
+
+        <% @m3_products.each do |product| %>
+
+          <div class="push-down-20  clearfix">
+            <%= image_tag product.image.url(:large), size: "78x78", alt: "#", class: "widgets__products" %>
+            <h5 class="products__title">
+            <%= link_to product, class: "products__link" do %>
+              <%= product.name %>
+            <% end %>
+            </h5>
+            <span class="products__price--widgets"><%= product.price %> р.</span>
+            <br><br>
+
+            <span class="glyphicon glyphicon-star  star-on"></span>
+            <span class="glyphicon glyphicon-star  star-on"></span>
+            <span class="glyphicon glyphicon-star  star-on"></span>
+            <span class="glyphicon glyphicon-star  star-on"></span>
+            <span class="glyphicon glyphicon-star  star-on"></span>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="widgets__navigation">
+        <div class="widgets__heading--line">
+          <h4 class="widgets__heading">Для старшего поколения</h4>
+        </div>
+
+        <% @m4_products.each do |product| %>
+          <div class="clearfix  push-down-15">
+            <%= image_tag product.image.url(:large), size: "78x78", alt: "#", class: "widgets__products" %>
+            <div class="products__title">
+              <%= link_to product, class: "products__link" do %>
+                <%= product.name %>
+              <% end %>
+            </div>
+            <span class="products__price--widgets"><%= product.price %> р.</span>
+            <br><br>
+            <div class="products__category">
+              <% product.categories.each do |category| %>
+                <%= category.name %> <br>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="widgets__navigation">
+        <div class="widgets__heading--line">
+          <h4 class="widgets__heading">Полезные советы</h4>
+        </div>
+        <div style="float: left; margin: 0px 15px 15px 0px;">
+          <img alt="#" class="product__image" src="assets/dummy-licensed/recipe.png" width="160" height="233">
+        </div>
+        <div class="products__title">
+          <div class="push-down-10"></div>
+          Елена Гарагуля
+          <br><br>
+          Врач терапевт, фитотерапевт, диетолог, нутрициолог, член Национальной Ассоциации Диетологов и Нутрициологов.
+        </div>
+        <p align="justify">
+          <br><br>
+          Гармоничное развитие и рост ребенка зависит от полноценного состава его рациона питания и самый идеальный продукт – это грудное материнское молоко, которое тоже должно быть максимально полноценным. Источником практически всех незаменимых питательных веществ являются ядра кедрового ореха, с рекордно высоким содержанием белка (25г на 100г), имеющим все 20 аминокислот и отличающимся высокой усвояемостью до 95%.
+        </p>
+
+        <a data-target=".js--cat-5" class="js--filter-selectable" href="#">Подробнее...</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="testimonials  light-paper-pattern">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3  hidden-xs">
+        <div class="testimonials__quotes">
+          <img alt="#" class="testimonials__quotes--img" src="assets/quotes.png">
+        </div>
+      </div>
+      <div class="col-xs-12  col-sm-6">
+        <a href="#js--testimonails-carousel" data-slide="prev"><span class="glyphicon  glyphicon-circle  glyphicon-chevron-left"></span></a>
+        <h4 class="testimonials__title"><span class="light">Отзывы</span> о нас</h4>
+        <a href="#js--testimonails-carousel" data-slide="next"><span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span></a>
+        <hr class="divider-dark">
+        <div id="js--testimonails-carousel" class="carousel  slide" data-ride="carousel" data-interval="5000">
+          <div class="carousel-inner">
+            <div class="item  active">
+              <q class="testimonials__text">
+
+                Здравствуйте, меня зовут Алла 35 лет, купила у вас крем для лица и была удивлена, постоянно пользуюсь различными кремами известных брендов, после применения вашего заметила исчезновение мелких пятнышек (типа пигментные пятна) на лице, это на самом деле качественный лечебный крем. Спасибо, теперь я ваш постоянный клиент!
+
+              </q>
+              <br><br>
+              <cite><b>Андреева А.И.</b></cite>
+            </div>
+            <div class="item">
+              <q class="testimonials__text">
+
+                Меня постоянно мучали боли после операции, врачи назначали разные дорогостоящие препараты, но толку от них мало. Случайно зашла в отдел «Звенящие Кедры России», Оксаночка мне предложила попробовать живичный крем, помазала и сразу почувствовала облегчение. На следующий день купила еще 4 баночки. Спасибо большое!
+
+              </q>
+              <br><br>
+              <cite><b>Звягенцева И.А.</b></cite>
+            </div>
+            <div class="item">
+              <q class="testimonials__text">
+
+                Купила зубную пасту, у меня проблема с деснами, постоянно кровоточат, сначала не поверила что поможет, но после второго использования десны перестали кровоточить, еще всем советую дополнительно натирать десны (я это делаю пальцем) этой пастой и оставлять на ночь. Реально помогает! Советую всем!
+
+              </q>
+              <br><br>
+              <cite><b>Субботина В.А.</b></cite>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3  hidden-xs">
+        <div class="testimonials__quotes--rotate">
+          <img alt="#" class="testimonials__quotes--img" src="assets/quotes.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="search-mode__overlay"></div>
+
+
+<script type="text/javascript">
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = "js/main.js";
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+</script>
+

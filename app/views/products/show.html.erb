@@ -1,0 +1,253 @@
+
+  <!-- Google fonts -->
+  <script type="text/javascript">
+      WebFontConfig = {
+          google: { families: [ 'Arvo:700:latin', 'Open+Sans:400,600,700:latin' ] }
+      };
+      (function() {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+      })();
+  </script>
+
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <nav>
+          <ol class="breadcrumb">
+
+            <li><%= link_to "Главная", root_path %></li>
+
+            <li><%= link_to "Продукция", shop_path %></li>
+
+            <li class="active">Выбранный товар</li>
+
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="push-down-30">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="product-preview">
+          <div class="push-down-20">
+            <%= image_tag @product.image.url(:large), size: "360x360", alt: "Выбранный товар", class: "js--product-preview" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <div class="products__content">
+          <div class="push-down-30"></div>
+
+          <span class="products__category">Muesli</span>
+          <h1 class="single-product__title"><%= @product.name %></h1>
+          <span class="single-product__price"><%= @product.price %> р.</span>
+
+          <hr class="bold__divider">
+          <p class="single-product__text">
+            <%= @product.description %>
+          </p>
+          <hr class="bold__divider">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="push-down-30">
+    <div class="products-navigation">
+      <div class="products-navigation__title">
+        <h3><span class="light">Похожие</span> товары</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <div class="push-down-30">
+    <div class="row">
+
+
+
+
+      <div class="col-xs-6 col-sm-3  js--isotope-target  js--cat-6" data-price="16.88" data-rating="4">
+        <div class="products__single">
+          <figure class="products__image">
+            <a href="single-product.html">
+              <img alt="#" class="product__image" width="263" height="334" src="images/dummy/w263/16.jpg">
+            </a>
+            <div class="product-overlay">
+              <a class="product-overlay__more" href="single-product.html">
+                <span class="glyphicon glyphicon-search"></span>
+              </a>
+              <a class="product-overlay__cart" href="#">
+                +<span class="glyphicon glyphicon-shopping-cart"></span>
+              </a>
+              <div class="product-overlay__stock">
+                <span class="in-stock">&bull;</span> <span class="in-stock--text">In stock</span>
+              </div>
+            </div>
+          </figure>
+          <div class="row">
+            <div class="col-xs-9">
+              <h5 class="products__title">
+                <a class="products__link  js--isotope-title" href="single-product.html">High Protein Diet Mango</a>
+              </h5>
+            </div>
+            <div class="col-xs-3">
+              <div class="products__price">
+                $16.88
+              </div>
+            </div>
+          </div>
+          <div class="products__category">
+            Natural Proteins
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-xs-6 col-sm-3  js--isotope-target  js--cat-3" data-price="4.61" data-rating="5">
+        <div class="products__single">
+          <figure class="products__image">
+            <a href="single-product.html">
+              <img alt="#" class="product__image" width="263" height="334" src="images/dummy/w263/12.jpg">
+            </a>
+            <div class="product-overlay">
+              <a class="product-overlay__more" href="single-product.html">
+                <span class="glyphicon glyphicon-search"></span>
+              </a>
+              <a class="product-overlay__cart" href="#">
+                +<span class="glyphicon glyphicon-shopping-cart"></span>
+              </a>
+              <div class="product-overlay__stock">
+                <span class="in-stock">&bull;</span> <span class="in-stock--text">In stock</span>
+              </div>
+            </div>
+          </figure>
+          <div class="row">
+            <div class="col-xs-9">
+              <h5 class="products__title">
+                <a class="products__link  js--isotope-title" href="single-product.html">Bio Murve</a>
+              </h5>
+            </div>
+            <div class="col-xs-3">
+              <div class="products__price">
+                $4.61
+              </div>
+            </div>
+          </div>
+          <div class="products__category">
+            Bio
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-sm-3  js--isotope-target  js--cat-5" data-price="3.84" data-rating="5">
+        <div class="products__single">
+          <figure class="products__image">
+            <a href="single-product.html">
+              <img alt="#" class="product__image" width="263" height="334" src="images/dummy/w263/23.jpg">
+            </a>
+            <div class="product-overlay">
+              <a class="product-overlay__more" href="single-product.html">
+                <span class="glyphicon glyphicon-search"></span>
+              </a>
+              <a class="product-overlay__cart" href="#">
+                +<span class="glyphicon glyphicon-shopping-cart"></span>
+              </a>
+              <div class="product-overlay__stock">
+                <span class="out-of-stock">&bull;</span> <span class="in-stock--text">Out of stock</span>
+              </div>
+            </div>
+          </figure>
+          <div class="row">
+            <div class="col-xs-9">
+              <h5 class="products__title">
+                <a class="products__link  js--isotope-title" href="single-product.html">Bio Muesli Fruits And Fibre</a>
+              </h5>
+            </div>
+            <div class="col-xs-3">
+              <div class="products__price">
+                $3.84
+              </div>
+            </div>
+          </div>
+          <div class="products__category">
+            Muesli
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-xs-6 col-sm-3  js--isotope-target  js--cat-3" data-price="6.18" data-rating="4">
+        <div class="products__single">
+          <figure class="products__image">
+            <a href="single-product.html">
+              <img alt="#" class="product__image" width="263" height="334" src="images/dummy/w263/7.jpg">
+            </a>
+            <div class="product-overlay">
+              <a class="product-overlay__more" href="single-product.html">
+                <span class="glyphicon glyphicon-search"></span>
+              </a>
+              <a class="product-overlay__cart" href="#">
+                +<span class="glyphicon glyphicon-shopping-cart"></span>
+              </a>
+              <div class="product-overlay__stock">
+                <span class="in-stock">&bull;</span> <span class="in-stock--text">In stock</span>
+              </div>
+            </div>
+          </figure>
+          <div class="row">
+            <div class="col-xs-9">
+              <h5 class="products__title">
+                <a class="products__link  js--isotope-title" href="single-product.html">Bio Apricot Kernels</a>
+              </h5>
+            </div>
+            <div class="col-xs-3">
+              <div class="products__price">
+                $6.18
+              </div>
+            </div>
+          </div>
+          <div class="products__category">
+            Bio
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = "js/main.js";
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+</script>

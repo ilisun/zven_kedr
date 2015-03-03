@@ -1,0 +1,22 @@
+
+<table class="table table-theme table-striped">
+  <thead>
+  <tr>
+    <th>Наименование</th>
+    <th>Действие</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @categories.each do |category| %>
+      <tr class="active">
+        <td><%= category.name %></td>
+        <td>
+          <%= link_to 'Редакт.', edit_category_path(category) %>
+          <%= link_to 'Удалить', category_path(category), method: :delete, data: { confirm: 'Вы действительно хотите удалить запись?' } %>
+        </td>
+      </tr>
+  <% end %>
+
+  </tbody>
+</table>

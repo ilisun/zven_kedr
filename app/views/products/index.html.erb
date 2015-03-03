@@ -1,0 +1,80 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <!-- Big banner -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="push-down-30">
+        <div class="banners--big">
+          Административная<strong>  область</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+
+      <%= link_to "Добавить категорию", new_category_path, class: "btn btn-warning--reverse-transition" %>
+      </br></br>
+
+      <%= render 'categories/form' %>
+
+    </div>
+    <div class="col-sm-9">
+      <%= link_to "Добавить продукт", new_product_path, class: "btn btn-warning--reverse-transition" %>
+      </br></br>
+
+      <table class="table table-theme table-striped">
+        <thead>
+        <tr>
+          <th>Фото</th>
+          <th>Наименование</th>
+          <th>Цена</th>
+          <th>Описание</th>
+          <th>Категория</th>
+          <th>Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% @products.each do |product| %>
+          <tr class="active">
+            <td><%= image_tag product.image.url(:mini) %></td>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.description %></td>
+            <td>
+
+              <% product.categories.each do |category| %>
+                  <%= category.name %> <br>
+              <% end %>
+
+            </td>
+            <td>
+              <%= link_to 'Редакт.', edit_product_path(product) %>
+              <%= link_to 'Удалить', product_path(product), method: :delete, data: { confirm: 'Вы действительно хотите удалить запись?' } %>
+            </td>
+          </tr>
+        <% end %>
+
+        </tbody>
+      </table>
+
+      <hr class="shop__divider">
+      <div class="shop__pagination">
+        <ul class="pagination">
+
+          <%= paginate @products %>
+
+
+
+          <!--<li><a class="pagination--nav" href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>-->
+          <!--<li><a href="#">1</a></li>-->
+          <!--<li><a class="active" href="#">2</a></li>-->
+          <!--<li><a href="#">3</a></li>-->
+          <!--<li><a href="#">4</a></li>-->
+          <!--<li><a href="#">5</a></li>-->
+          <!--<li><a class="pagination--nav" href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

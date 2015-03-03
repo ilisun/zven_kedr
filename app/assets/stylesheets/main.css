@@ -5434,6 +5434,13 @@ pre {
 }
 
 .wp-post-image {
+    width: 400px;
+    height: auto;
+    -webkit-transition: -webkit-transform .1s linear;
+    transition: transform .1s linear
+}
+
+.wp-post-image-about {
     width: 100%;
     height: auto;
     -webkit-transition: -webkit-transform .1s linear;
@@ -7186,12 +7193,14 @@ pre {
     width: 100%;
     height: auto;
     -webkit-transition: -webkit-transform .1s linear;
-    transition: transform .1s linear
+    transition: transform .1s linear;
 }
 
 html.no-touch .products__image {
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    min-height: 190px;
+    min-width: 190px
 }
 
 html.no-touch .products__image:hover {
@@ -8612,4 +8621,23 @@ html.no-touch .product-overlay__stock {
 
 .shop__filter__slider .range-numbers .max-val {
     float: right
+}
+
+.user-crop-preview {
+    float         : left;
+    margin-right  : 50px;
+    margin-bottom : 20px;
+}
+
+.user-crop-area {
+    float         : left;
+    margin-bottom : 20px;
+}
+
+.clear {
+    clear : both;
+}
+
+.check_box {
+    text-align: left;
 }

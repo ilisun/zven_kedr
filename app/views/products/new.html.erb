@@ -1,0 +1,40 @@
+<div class="container">
+  <!-- Big banner -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="push-down-30">
+        <div class="banners--big">
+          Мы - официальные дилеры компании "Звенящие кедры России" в<strong> Липецке и Липецкой области.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </br></br>
+
+  <%= form_for @product, :html => {:multipart => true} do |f| %>
+    <%= f.label :Название %> <br>
+    <%= f.text_field :name %> <br>
+    <%= f.label :Цена %> <br>
+    <%= f.text_field :price %> <br>
+    <%= f.label :Описание %> <br>
+    <%= f.text_area :description, rows: 10 %> <br>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+      <div class="row">
+              <div class="col-xs-1">
+                <%= b.check_box(class: "check_box") %>
+              </div>
+
+              <div class="col-xs-1">
+                <%= b.object.name %>
+              </div>
+        </div>
+    <% end %>
+    <%= f.label :Фото %> <br>
+    <%= f.file_field :image %> <br><br>
+    <%= f.submit "Добавить товар", class: "btn btn-primary--reverse-transition" %> <br>
+  <% end %>
+
+  </br></br>
+
+</div>

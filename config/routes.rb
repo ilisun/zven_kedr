@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :product
+  resources :products
+  resources :categories
 
-  root to: "product#index"
+  root to: "products#main"
 
-  match '/about',   to: 'product#about',   via: 'get'
-  match '/contact',   to: 'product#contact',   via: 'get'
-  match '/shop',   to: 'product#shop',   via: 'get'
-  match '/single-product',   to: 'product#single-product',   via: 'get'
+  match '/about',   to: 'products#about',   via: 'get'
+  match '/image',   to: 'products#image',   via: 'get'
+  match '/contact',   to: 'products#contact',   via: 'get'
+  match '/shop',   to: 'products#shop',   via: 'get'
+  match '/prod',   to: 'statics#prod',   via: 'get'
 end

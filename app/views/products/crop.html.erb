@@ -1,0 +1,30 @@
+
+
+
+<div class="container  push-down-30">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="center"><span class="light">Обрезка</span> изображения</h1>
+      <hr class="divider">
+      <div align="center">
+
+        <%= form_for (@product) do |f| %>
+
+            <div class="user-crop-preview">
+              <%= f.crop_preview :image %>
+            </div>
+            <div class="user-crop-area">
+              <%= f.cropbox :image, :width => 600 %>
+            </div>
+            <div class="clear"></div>
+
+            <div class="actions">
+              <%= f.submit "Обрезка", class: "btn btn-primary" %>
+            </div>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

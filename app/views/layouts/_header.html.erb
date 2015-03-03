@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12  col-sm-6">
         <div class="top__slogan">
-          Сделано с <img alt="Logo" src="assetsheart.png" > из Сибирского кедра и других природных компонентов
+          Сделано с <img alt="Logo" src="/assets/heart.png" > из Сибирского кедра и других природных компонентов
         </div>
       </div>
     </div>
@@ -38,14 +38,28 @@
                 <%= link_to "Главная", root_path %>
               </li>
               <li class="dropdown">
-                <%= link_to "О компании", about_path %>
+                <%= link_to about_path, class: "dropdown-toggle" do %>О компании<b class="caret"></b><% end %>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "О компании", about_path %></li>
+                  <li><%= link_to "Производство", prod_path %></li>
+                </ul>
               </li>
               <li class="dropdown">
                 <%= link_to "Продукция", shop_path %>
               </li>
+              <!--<li class="dropdown">-->
+                <!--<%= link_to "Контакты", contact_path %>-->
+              <!--</li>-->
+
               <li class="dropdown">
-                <%= link_to "Контакты", contact_path %>
+                <%= link_to contact_path, class: "dropdown-toggle" do %>Контакты<b class="caret"></b><% end %>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Контакты", contact_path %></li>
+                  <li><%= link_to "Админка", products_path %></li>
+                </ul>
               </li>
+
+
             </ul>
             <!-- search for mobile devices -->
             <form action="#" method="post" class="visible-xs  visible-sm  mobile-navbar-form" role="form">
@@ -67,5 +81,4 @@
       </div>
     </div>
   </div>
-
 </header>
