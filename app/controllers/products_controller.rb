@@ -27,7 +27,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @products = Product.joins(:categories).where("categories.id = ?", '20').order("RANDOM()").take(4)
+    @products = Product.joins(:categories).order("RANDOM()").take(4)
+    # @products = Product.joins(:categories).where("categories.id = ?", '20').order("RANDOM()").take(4)
   end
 
   def edit
