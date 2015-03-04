@@ -1,8 +1,22 @@
+<div class="container">
 
-<%= form_for @category do |f| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4"></div>
+    <div class="col-xs-12 col-sm-4">
 
-      <%= f.label :'Название категории' %> <br>
-      <%= f.text_field :name %> <br>
-      <%= f.submit %> <br>
+      <hr class="divider">
+      <%= form_for @category do |f| %>
 
-<% end %>
+        <h3><%= f.label :'Название категории' %></h3>
+        <%= f.text_field :name, class: 'form-control  form-control--contact' %> <br><br>
+        <%= f.submit "Создать категорию", class: "btn btn-primary--reverse-transition" %>
+        <%= link_to 'Назад', products_path, class: "btn btn-info--transition" %><br>
+
+      <% end %>
+      <hr class="divider">
+      <br>
+
+    </div>
+    <div class="col-xs-12 col-sm-4"></div>
+  </div>
+</div>

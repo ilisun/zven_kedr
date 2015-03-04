@@ -33,7 +33,7 @@
         <div class="banners-box">
           <span class="glyphicon glyphicon-earphone glyphicon--banners"></span>
           <b class="banners__title">НАШ ТЕЛЕФОН</b>
-          +7 (909) 222-78-50
+          +7 (905) 684-52-57
         </div>
       </div>
       <div class="col-xs-12  col-sm-6  col-md-3">
@@ -105,7 +105,9 @@
                 </div>
                 <div class="products__category">
                   <% product.categories.each do |category| %>
-                    <%= category.name %> <br>
+                    <% if (category.id > 4) %>
+                      <%= category.name %> &nbsp
+                    <% end %>
                   <% end %>
                 </div>
               </div>
@@ -154,9 +156,9 @@
         <figure class="products__image">
           <%= image_tag product.image.url(:large), size: "260x260", alt: "#", class: "product__image" %>
           <div class="product-overlay">
-            <a class="product-overlay__more" href="single-product.html">
+            <%= link_to product, class: "product-overlay__more" do %>
               <span class="glyphicon glyphicon-search"></span>
-            </a>
+            <% end %>
           </div>
         </figure>
         <div class="row">
@@ -175,7 +177,9 @@
         </div>
         <div class="products__category">
           <% product.categories.each do |category| %>
-            <%= category.name %> <br>
+            <% if (category.id > 4) %>
+              <%= category.name %> &nbsp
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -191,7 +195,7 @@
     <div class="col-xs-12 col-sm-4">
       <div class="widgets__navigation">
         <div class="widgets__heading--line">
-          <h4 class="widgets__heading">Для детей</h4>
+          <h4 class="widgets__heading">Специально для Детей</h4>
         </div>
 
         <% @m3_products.each do |product| %>
@@ -220,7 +224,7 @@
     <div class="col-xs-12 col-sm-4">
       <div class="widgets__navigation">
         <div class="widgets__heading--line">
-          <h4 class="widgets__heading">Для старшего поколения</h4>
+          <h4 class="widgets__heading">Специально для МАМ</h4>
         </div>
 
         <% @m4_products.each do |product| %>
@@ -235,7 +239,9 @@
             <br><br>
             <div class="products__category">
               <% product.categories.each do |category| %>
-                <%= category.name %> <br>
+                <% if (category.id > 4) %>
+                  <%= category.name %> &nbsp
+                <% end %>
               <% end %>
             </div>
           </div>

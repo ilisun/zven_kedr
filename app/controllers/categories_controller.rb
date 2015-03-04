@@ -1,11 +1,11 @@
 class CategoriesController < ApplicationController
+  before_action :load_categories
 
   def show
     @category = Category.find(params[:id])
   end
 
   def index
-    @categories = Category.all
   end
 
   def new
@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to categories_path
+      redirect_to products_path
     else
       render :new
     end
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to categories_path
+      redirect_to products_path
     else
       render :edit
     end
@@ -40,10 +40,14 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
 
-    redirect_to categories_path
+    redirect_to products_path
   end
 
   private
+
+  def load_categories
+    @categories = Category.all
+  end
 
   def category_params
     params.require(:category).permit(:name)

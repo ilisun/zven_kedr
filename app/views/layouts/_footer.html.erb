@@ -21,10 +21,12 @@
               <h4 class="footer-widgets__heading">Навигация</h4>
             </div>
             <ul class="nav nav-footer">
-              <li><a href="#">Главная</a></li>
-              <li><a href="#">О компании</a></li>
-              <li><a href="#">Продукция</a></li>
-              <li><a href="#">Контакты</a></li>
+              <li><%= link_to "Главная", root_path %></li>
+              <li><%= link_to "О компании", about_path %></li>
+              <li><%= link_to "Производство", prod_path %></li>
+              <li><%= link_to "Продукция", shop_path %></li>
+              <li><%= link_to "Контакты", contact_path %></li>
+              <li><%= link_to "Админка", products_path %></li>
             </ul>
           </nav>
         </div>
@@ -33,7 +35,11 @@
             <div class="footer-wdgets__heading--line">
               <h4 class="footer-widgets__heading">Популярные тэги</h4>
             </div>
-            <a class="tag" href="shop.html">Еда</a> <a class="tag" href="shop.html">Для дома</a> <a class="tag" href="shop.html">Для отдыха</a> <a class="tag" href="shop.html">Аптека</a> <a class="tag" href="shop.html">Косметика</a> <a class="tag" href="shop.html">Shop</a> <a class="tag" href="shop.html">Shop</a> <a class="tag" href="shop.html">Shop</a> <a class="tag" href="shop.html">Shop</a> <a class="tag" href="shop.html">Healthy</a>
+
+            <%= render :partial => "categories/cat" %>
+
+
+
           </div>
         </div>
         <div class="col-xs-12  col-sm-3">
@@ -44,9 +50,9 @@
             <a class="footer__link" href="#">ООО "Звенящие Кедры"</a><br>
             г. Липецк, ул. Космонавтов, д.98 <br>
             Советский район, 9-й микрорайон <br>
-            ТЦ «Ноябрьский» <br>
+            ТЦ «Ноябрьский», 1 этаж (налево) <br>
             <%= link_to "Посмотреть на карте ", contact_path, class: "footer__link--small" %><span class="glyphicon glyphicon-chevron-right glyphicon--footer-small"></span><br><br>
-            <a class="footer__link" href="#"><span class="glyphicon glyphicon-earphone glyphicon--footer"></span> +7 (909) 222-78-50</a><br>
+            <a class="footer__link" href="#"><span class="glyphicon glyphicon-earphone glyphicon--footer"></span> +7 (905) 684-52-57 </a><br>
             <a class="footer__link" href="#"><span class="glyphicon glyphicon-envelope glyphicon--footer"></span> lipetsk@megre.ru</a>
           </div>
         </div>
@@ -58,7 +64,7 @@
       <div class="row">
         <div class="col-xs-12  col-sm-7">
           <div class="footer__text--link">
-            <a class="footer__link" href="#">Звенящие Кедры</a> © Copyright 2014. Официальный представитель в <a class="footer__link" href="#" target="_blank">Липецке</a>.
+            <a class="footer__link" href="#">Звенящие Кедры</a> © Copyright 2015. Официальный представитель в <a class="footer__link" href="#" target="_blank">Липецке</a>.
           </div>
         </div>
         <div class="col-xs-12  col-sm-5">

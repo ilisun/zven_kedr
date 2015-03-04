@@ -1,33 +1,44 @@
 <div class="container">
-  <!-- Big banner -->
+  <h1 class="center"><span class="light">Редактирование</span> товара</h1>
+  <hr class="divider">
   <div class="row">
-    <div class="col-xs-12">
-      <div class="push-down-30">
-        <div class="banners--big">
-          Мы - официальные дилеры компании "Звенящие кедры России" в<strong> Липецке и Липецкой области.</strong>
-        </div>
+    <%= form_for @product, method: :patch, :html => {:multipart => true} do |f| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.label :Название %> <br>
+        <%= f.text_field :name, class: 'form-control  form-control--contact' %> <br>
+        <%= f.label :Цена %> <br>
+        <%= f.text_field :price, class: 'form-control  form-control--contact' %> <br>
+        <%= f.label :Описание %> <br>
+        <%= f.text_area :description, class: 'form-control  form-control--contact  form-control--big', rows: 10 %> <br>
       </div>
-    </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.label :Категории %> <br>
+        <hr>
+        <%= f.collection_check_boxes :category_ids, Category.all.order(:id), :id, :name do |b| %> <br>
+          <div class="row">
+            <div class="col-xs-1">
+              <%= b.check_box(class: "check_box") %>
+            </div>
+            <div class="col-xs-10">
+              <%= b.object.name %>
+            </div>
+          </div>
+          <% if (b.object.id == 4) %>
+            <hr>
+          <% end %>
+        <% end %>
+        <hr>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.label :Фото %> <br>
+        <hr>
+        <%= image_tag @product.image.url(:medium) %> <br><br>
+        <%= f.file_field :image %>
+        <hr class="title__divider">
+        <%= f.submit "Сохранить", class: "btn btn-primary--reverse-transition" %>
+        <%= link_to 'Назад', products_path, class: "btn btn-info--transition" %><br>
+      </div>
+    <% end %>
   </div>
-
-  </br></br>
-
-  <%= image_tag @product.image.url(:mini) %> <br>
-
-  <%= form_for @product, method: :patch, :html => {:multipart => true} do |f| %>
-      <%= f.label :Название %> <br>
-      <%= f.text_field :name %> <br>
-      <%= f.label :Цена %> <br>
-      <%= f.text_field :price %> <br>
-      <%= f.label :Описание %> <br>
-      <%= f.text_area :description, rows: 10 %> <br>
-      <%= f.label :Категории %> <br>
-      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %> <br>
-      <%= f.label :Фото %> <br>
-      <%= f.file_field :image %> <br><br>
-      <%= f.submit "Сохранить", class: "btn btn-primary--reverse-transition" %> <br>
-  <% end %>
-
-  </br></br>
-
+  <hr class="divider">
 </div>

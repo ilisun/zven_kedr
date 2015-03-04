@@ -1,23 +1,22 @@
 <div class="container">
-  <!-- Big banner -->
+
   <div class="row">
-    <div class="col-xs-12">
-      <div class="push-down-30">
-        <div class="banners--big">
-          Мы - официальные дилеры компании "Звенящие кедры России" в<strong> Липецке и Липецкой области.</strong>
-        </div>
-      </div>
+    <div class="col-xs-12 col-sm-4"></div>
+    <div class="col-xs-12 col-sm-4">
+
+      <hr class="divider">
+      <%= form_for @category, method: :patch do |f| %>
+
+        <h3><%= f.label :'Название категории' %></h3>
+        <%= f.text_field :name, class: 'form-control  form-control--contact' %> <br><br>
+        <%= f.submit "Изменить категорию", class: "btn btn-primary--reverse-transition" %>
+        <%= link_to 'Назад', products_path, class: "btn btn-info--transition" %><br>
+
+      <% end %>
+      <hr class="divider">
+      <br>
+
     </div>
+    <div class="col-xs-12 col-sm-4"></div>
   </div>
-
-  </br></br>
-
-  <%= form_for @category, method: :patch do |f| %>
-      <%= f.label :Название %> <br>
-      <%= f.text_field :name %> <br>
-      <%= f.submit "Сохранить", class: "btn btn-primary--reverse-transition" %> <br>
-  <% end %>
-
-  </br></br>
-
 </div>
