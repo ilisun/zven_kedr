@@ -30,7 +30,11 @@
             <td><%= image_tag product.image.url(:mini) %></td>
             <td><%= product.name %></td>
             <td><%= product.price %></td>
-            <td><%= product.description %></td>
+            <td>
+              <div style="height:150px;overflow:auto;">
+                <%= product.description %>
+              </div>
+            </td>
             <td>
               <% product.categories.each do |category| %>
                   <%= category.name %> <br>
