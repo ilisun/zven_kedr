@@ -14,3 +14,9 @@ test:
   database: kedr_dbtest
   username: qna_user
   password: Qwerty12
+
+production:
+  <<: *default
+  database: zk_site_db
+  username: postgres
+  password: lip.yAr.bd
