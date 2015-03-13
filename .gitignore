@@ -21,4 +21,4 @@
 /public/uploads
 /public/spec
 
-.idea
+.idea/config/deploy.rb

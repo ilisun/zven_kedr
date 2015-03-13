@@ -148,6 +148,10 @@
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.25.1, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.5.0, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.10.1, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-scp (v1.2.1, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-sftp (v2.1.2, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-ssh (v2.9.2, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-ssh-gateway (v1.2.0, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="paperclip (v4.2.1, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="papercrop (v0.2.0, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.17.1, RVM: ruby-2.0.0-p481 [zven_kedr]) [gem]" level="application" />
