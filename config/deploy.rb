@@ -2,7 +2,7 @@ require "rvm/capistrano"
 require "bundler/capistrano"
 
 set :application, "zven_kedr"
-set :repository,  "git@github.com:ilisun/zven_kedr.git"
+set :repository,  "https://github.com/ilisun/zven_kedr.git"
 
 set :shared_children, shared_children
 set :deploy_to, "/var/www/zven_kedr"
