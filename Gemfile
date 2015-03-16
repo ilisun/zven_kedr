@@ -16,6 +16,7 @@ gem 'papercrop'
 gem 'kaminari'
 gem 'dotenv'
 gem 'dotenv-deployment', require: 'dotenv/deployment'
+gem 'therubyracer'
 
 gem 'spring',        group: :development
 
