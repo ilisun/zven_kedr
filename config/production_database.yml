@@ -1,7 +1,0 @@
-production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: zk_site_db
-  username: postgres
-  password: lip.yAr.bd

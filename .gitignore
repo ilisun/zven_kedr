@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+/doc/examples
+config/database.yml
+
 # Ignore uploaded files.
 /public/system
 /public/tmp
