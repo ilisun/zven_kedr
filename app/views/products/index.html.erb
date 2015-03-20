@@ -19,31 +19,12 @@
           <td class="right">7</td>
         </tr>
 
-
-        <% @categories.each_with_index do |category| %>
+        <% @categories.each_with_index do |category, index| %>
           <tr>
-            <td>Кол-во: <%= category.name %></td>
-            <td><%= category.products.count %></td>
+            <td><%= index + 1 %>. Кол-во: <%= category.name %></td>
+            <td class="right"><%= category.products.count %></td>
           </tr>
         <% end %>
-
-
-        <tr>
-          <td class="<%= ' red' if @c1_count < 4 %>">Кол-во: <%= @categories[0].name %></td>
-          <td class="right<%= ' red' if @c1_count < 4 %>"><%= @c1_count %></td>
-        </tr>
-        <tr>
-          <td class="<%= ' red' if @c2_count < 8 %>">Кол-во: <%= @categories[1].name %></td>
-          <td class="right<%= ' red' if @c2_count < 8 %>"><%= @c2_count %></td>
-        </tr>
-        <tr>
-          <td class="<%= ' red' if @c3_count < 4 %>">Кол-во: <%= @categories[2].name %></td>
-          <td class="right<%= ' red' if @c3_count < 4 %>"><%= @c3_count %></td>
-        </tr>
-        <tr>
-          <td class="<%= ' red' if @c4_count < 4 %>">Кол-во: <%= @categories[3].name %></td>
-          <td class="right<%= ' red' if @c4_count < 4 %>"><%= @c4_count %></td>
-        </tr>
 
         </tbody>
       </table>
@@ -67,7 +48,7 @@
         </thead>
         <tbody>
 
-        <% @products.each_with_index do |product| %>
+        <% @products.each do |product| %>
           <tr class="active">
             <td><%= image_tag product.image.url(:mini) %></td>
             <td><%= product.name %></td>
