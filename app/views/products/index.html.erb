@@ -8,6 +8,48 @@
       <%= render 'categories/form' %>
       <hr class="divider">
 
+      <table class="table table-hover">
+        <tbody>
+        <tr>
+          <td>Всего товаров в базе</td>
+          <td class="right">104</td>
+        </tr>
+        <tr>
+          <td>Всего категорий</td>
+          <td class="right">7</td>
+        </tr>
+
+
+        <% @categories.each_with_index do |category| %>
+          <tr>
+            <td>Кол-во: <%= category.name %></td>
+            <td><%= category.products.count %></td>
+          </tr>
+        <% end %>
+
+
+        <tr>
+          <td class="<%= ' red' if @c1_count < 4 %>">Кол-во: <%= @categories[0].name %></td>
+          <td class="right<%= ' red' if @c1_count < 4 %>"><%= @c1_count %></td>
+        </tr>
+        <tr>
+          <td class="<%= ' red' if @c2_count < 8 %>">Кол-во: <%= @categories[1].name %></td>
+          <td class="right<%= ' red' if @c2_count < 8 %>"><%= @c2_count %></td>
+        </tr>
+        <tr>
+          <td class="<%= ' red' if @c3_count < 4 %>">Кол-во: <%= @categories[2].name %></td>
+          <td class="right<%= ' red' if @c3_count < 4 %>"><%= @c3_count %></td>
+        </tr>
+        <tr>
+          <td class="<%= ' red' if @c4_count < 4 %>">Кол-во: <%= @categories[3].name %></td>
+          <td class="right<%= ' red' if @c4_count < 4 %>"><%= @c4_count %></td>
+        </tr>
+
+        </tbody>
+      </table>
+
+      <hr class="divider">
+
     </div>
     <div class="col-sm-9">
       <%= link_to "Добавить продукт", new_product_path, class: "btn btn-warning--reverse-transition" %>

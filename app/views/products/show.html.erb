@@ -59,7 +59,7 @@
           <span class="single-product__price"><%= @product.price %> р.</span>
           <hr class="bold__divider">
           <p class="single-product__text">
-            <%= @product.description %>
+            <%= simple_format @product.description %>
           </p>
           <hr class="bold__divider">
         </div>

@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
   def index
     @products = Product.page(params[:page]).order(:id).per(8)
     @categories = Category.all.order(:id)
+    @c1_count = Product.joins(:categories).where("categories.id = ?", '1').count()
+    @c2_count = Product.joins(:categories).where("categories.id = ?", '2').count()
+    @c3_count = Product.joins(:categories).where("categories.id = ?", '3').count()
+    @c4_count = Product.joins(:categories).where("categories.id = ?", '4').count()
+
   end
 
   def shop
@@ -15,10 +20,10 @@ class ProductsController < ApplicationController
   end
 
   def main
-    @m1_products = Product.joins(:categories).where("categories.id = ?", '1').take(4)
-    @m2_products = Product.joins(:categories).where("categories.id = ?", '2').take(8)
-    @m3_products = Product.joins(:categories).where("categories.id = ?", '3').take(4)
-    @m4_products = Product.joins(:categories).where("categories.id = ?", '4').take(4)
+    @m1_products = Product.joins(:categories).where("categories.id = ?", '1').order("RANDOM()").take(4)
+    @m2_products = Product.joins(:categories).where("categories.id = ?", '2').order("RANDOM()").take(8)
+    @m3_products = Product.joins(:categories).where("categories.id = ?", '3').order("RANDOM()").take(4)
+    @m4_products = Product.joins(:categories).where("categories.id = ?", '4').order("RANDOM()").take(4)
   end
 
   def new
