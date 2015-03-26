@@ -3,12 +3,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.page(params[:page]).order(:id).per(8)
+    @products_all = Product.all
     @categories = Category.all.order(:id)
-    @c1_count = Product.joins(:categories).where("categories.id = ?", '1').count()
-    @c2_count = Product.joins(:categories).where("categories.id = ?", '2').count()
-    @c3_count = Product.joins(:categories).where("categories.id = ?", '3').count()
-    @c4_count = Product.joins(:categories).where("categories.id = ?", '4').count()
-
   end
 
   def shop
@@ -59,7 +55,7 @@ class ProductsController < ApplicationController
 
     if @product.update(product_params)
       if params[:product][:image].blank?
-        redirect_to products_path
+        redirect_to (request.referer)
       else
         render :crop
       end

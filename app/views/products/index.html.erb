@@ -12,11 +12,11 @@
         <tbody>
         <tr>
           <td>Всего товаров в базе</td>
-          <td class="right">104</td>
+          <td class="right"><%= @products_all.count %></td></td>
         </tr>
         <tr>
           <td>Всего категорий</td>
-          <td class="right">7</td>
+          <td class="right"><%= @categories.count %></td></td>
         </tr>
 
         <% @categories.each_with_index do |category, index| %>
