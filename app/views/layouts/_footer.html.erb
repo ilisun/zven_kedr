@@ -35,9 +35,9 @@
             <div class="footer-wdgets__heading--line">
               <h4 class="footer-widgets__heading">Популярные тэги</h4>
             </div>
-
-            <%= render :partial => "categories/cat" %>
-
+            <% if controller_name != 'sessions' && controller_name != 'registrations' %>
+              <%= render :partial => "categories/cat" %>
+            <% end %>
 
 
           </div>

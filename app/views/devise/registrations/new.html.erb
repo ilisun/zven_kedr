@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4"></div>
+    <div class="col-xs-12 col-sm-4">
+      <h3>Регистрация</h3>
+      <hr class="divider">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.label :'Имя пользователя' %>
+        <%= f.text_field :username, class: 'form-control  form-control--contact', autofocus: true %>
+        <br>
+        <%= f.label :'Пароль' %>
+        <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, class: 'form-control  form-control--contact', autocomplete: "off" %>
+        <br>
+        <%= f.label :'Повтор пароля' %>
+        <%= f.password_field :password_confirmation, class: 'form-control  form-control--contact', autocomplete: "off" %>
+        <br>
+        <%= f.submit "Зарегистрировать", class: "btn btn-primary--reverse-transition" %>
+      <% end %>
+      <hr class="divider">
+      <br>
+    </div>
+    <div class="col-xs-12 col-sm-4"></div>
+  </div>
+</div>
+

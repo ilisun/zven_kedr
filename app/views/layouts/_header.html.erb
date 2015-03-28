@@ -6,6 +6,27 @@
           Сделано с <img alt="Logo" src="/assets/heart.png" > из Сибирского кедра и других природных компонентов
         </div>
       </div>
+      <div class="col-xs-12  col-sm-6">
+        <div class="top__menu">
+          <ul class="nav  nav-pills">
+            <% unless user_signed_in? %>
+              <li class="dropdown  js--mobile-dropdown">
+                <%= link_to "Login", new_user_session_path %>
+
+              </li>
+            <% else %>
+              <li class="dropdown  js--mobile-dropdown">
+                <a class="dropdown-toggle" href="#">
+                  <%= current_user.email %> <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

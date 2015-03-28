@@ -50,9 +50,9 @@
         <div class="shop-filter">
           <h5 class="sidebar__subtitle">Категории</h5>
           <ul class="nav  nav--filter">
-            <li><%= link_to "Все", class: "js--filter-selectable" %></li>
+            <li><%= link_to "Все" %></li>
             <% @categories.each do |category| %>
-              <li><%= link_to category.name, class: "js--filter-selectable", :cat => category.id %></li>
+              <li><%= link_to category.name, :cat => category.id %></li>
             <% end %>
           </ul>
           <hr class="divider">

@@ -17,6 +17,7 @@ gem 'kaminari'
 gem 'dotenv'
 gem 'dotenv-deployment', require: 'dotenv/deployment'
 gem 'therubyracer'
+gem 'devise'
 
 gem 'spring',        group: :development
 

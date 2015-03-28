@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4"></div>
+    <div class="col-xs-12 col-sm-4">
+      <h3>Вход</h3>
+      <hr class="divider">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.label :'Имя пользователя' %>
+            <%= f.text_field :username, class: 'form-control  form-control--contact', autofocus: true %>
+            <br>
+            <%= f.label :'Пароль' %>
+            <%= f.password_field :password, class: 'form-control  form-control--contact', autocomplete: "off" %>
+            <br>
+            <%= f.submit "Войти", class: "btn btn-primary--reverse-transition" %>
+            <%= link_to "Sign up", new_user_registration_path %>
+        <% end %>
+      <hr class="divider">
+      <br>
+    </div>
+    <div class="col-xs-12 col-sm-4"></div>
+  </div>
+</div>
+
+
+

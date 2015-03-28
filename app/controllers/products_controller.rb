@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, except: [:shop, :main, :show]
   before_action :load_categories, except: [:index]
 
   def index
@@ -29,7 +30,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @products = Product.joins(:categories).order("RANDOM()").take(4)
-    # @products = Product.joins(:categories).where("categories.id = ?", '20').order("RANDOM()").take(4)
   end
 
   def edit
@@ -51,11 +51,12 @@ class ProductsController < ApplicationController
   end
 
   def update
+
     @product = Product.find(params[:id])
 
     if @product.update(product_params)
       if params[:product][:image].blank?
-        redirect_to (request.referer)
+        redirect_to products_path(:page => params[:main_page])
       else
         render :crop
       end
@@ -70,7 +71,7 @@ class ProductsController < ApplicationController
     @product.save
     @product.destroy
 
-    redirect_to products_path
+    redirect_to :back
   end
 
   private
