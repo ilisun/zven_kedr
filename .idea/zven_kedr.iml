@@ -131,7 +131,7 @@
     <orderEntry type="library" scope="PROVIDED" name="arel (v5.0.1.20140414130214, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.10, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.8.5, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.8.2, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano (v3.4.0, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-bundler (v1.1.4, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-rails (v1.1.2, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />

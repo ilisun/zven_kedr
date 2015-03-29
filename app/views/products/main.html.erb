@@ -98,8 +98,13 @@
                     </h5>
                   </div>
                   <div class="col-xs-4">
+
                     <div class="products__price">
-                      <%= product.price %> р.
+                      <% if product.price.nil?%>
+                        <%= link_to "Заказать", contact_path %>
+                      <% else %>
+                        <%= product.price %> р.
+                    <% end %>
                     </div>
                   </div>
                 </div>
