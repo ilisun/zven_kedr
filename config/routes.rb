@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   match '/contact',   to: 'statics#contact',   via: 'get'
   match '/shop',   to: 'products#shop',   via: 'get'
   match '/prod',   to: 'statics#prod',   via: 'get'
+
+  match '/send_contact_email', to: 'statics#send_contact_email', via: 'post'
+
 end

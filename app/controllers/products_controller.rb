@@ -48,7 +48,6 @@ class ProductsController < ApplicationController
     else
       render :new
     end
-    UserMailer.welcome_email(@product).deliver
   end
 
   def update

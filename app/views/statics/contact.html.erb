@@ -55,30 +55,32 @@
         <div class="col-xs-12  col-sm-9">
           <form validate>
             <div class="row">
-              <div class="col-xs-12  col-sm-4">
-                <div class="form-group">
-                  <label class="text-dark" for="name">Имя <span class="warning">*</span></label>
-                  <input type="text" id="name" class="form-control  form-control--contact" required>
+              <%= form_tag(send_contact_email_path) do %>
+                <div class="col-xs-12  col-sm-4">
+                  <div class="form-group">
+                    <%= label_tag 'name', 'Имя', class: 'text-dark' %><span class="warning"> *</span>
+                    <%= text_field_tag 'name', nil, class: 'form-control  form-control--contact', placeholder: 'Имя' %>
+                  </div>
+                  <div class="form-group">
+                    <%= label_tag 'email', 'E-mail', class: 'text-dark' %><span class="warning"> *</span>
+                    <%= email_field_tag 'email', nil, class: 'form-control  form-control--contact', placeholder: 'Ваш E-mail' %>
+                  </div>
+                  <div class="form-group">
+                    <%= label_tag 'subject', 'Тема', class: 'text-dark' %><span class="warning"> *</span>
+                    <%= text_field_tag 'subject', nil, class: 'form-control  form-control--contact', placeholder: 'Тема' %>
+                  </div>
+                  <span class="hidden-xs">Отмечены <span class="warning">*</span> обязательные к заполнению</span>
                 </div>
-                <div class="form-group">
-                  <label class="text-dark" for="email">E-mail <span class="warning">*</span></label>
-                  <input type="text" id="email" class="form-control  form-control--contact" required>
+                <div class="col-xs-12  col-sm-8">
+                  <div class="form-group">
+                    <%= label_tag 'comments', 'Сообщение', class: 'text-dark' %>
+                    <%= text_area_tag 'comments', nil, class: 'form-control  form-control--contact  form-control--big', rows:12, placeholder: 'Ваше сообщение...' %>
+                  </div>
+                  <div class="right">
+                    <%= submit_tag nil, class: 'btn btn-default btn-about pull-right' %>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label class="text-dark" for="subject">Тема <span class="warning">*</span></label>
-                  <input type="text" id="subject" class="form-control  form-control--contact" required>
-                </div>
-                <span class="hidden-xs">Отмечены <span class="warning">*</span> обязательные к заполнению</span>
-              </div>
-              <div class="col-xs-12  col-sm-8">
-                <div class="form-group">
-                  <label class="text-dark" for="message">Сообщение <span class="warning">*</span></label>
-                  <textarea class="form-control  form-control--contact  form-control--big" id="message" rows="12" required></textarea>
-                </div>
-                <div class="right">
-                  <button type="submit" class="btn  btn-warning">Отправить</button>
-                </div>
-              </div>
+              <% end %>
             </div>
           </form>
         </div>
