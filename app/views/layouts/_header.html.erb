@@ -17,7 +17,7 @@
             <% else %>
               <li class="dropdown  js--mobile-dropdown">
                 <a class="dropdown-toggle" href="#">
-                  <%= current_user.email %> <span class="caret"></span>
+                  <%= current_user.username %> <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>

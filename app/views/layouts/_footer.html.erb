@@ -26,7 +26,9 @@
               <li><%= link_to "Производство", prod_path %></li>
               <li><%= link_to "Продукция", shop_path %></li>
               <li><%= link_to "Контакты", contact_path %></li>
-              <li><%= link_to "Админка", products_path %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Админка", products_path %></li>
+              <% end %>
             </ul>
           </nav>
         </div>
