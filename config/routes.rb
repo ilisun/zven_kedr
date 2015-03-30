@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # devise_for :users, :skip => :registrations
+  devise_for :users, :skip => :registrations
   resources :products
   resources :categories
 
