@@ -17,7 +17,7 @@ class StaticsController < ApplicationController
   end
 
   def send_order_email
-    order_name = params[:name]
+    order_name = params[:order_name]
     name = params[:name]
     tel = params[:tel]
     @ip_address = request.remote_ip
