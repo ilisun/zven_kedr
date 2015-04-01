@@ -57,10 +57,10 @@
           </span>
           <h1 class="single-product__title"><%= @product.name %></h1>
           <span class="single-product__price">
-            <% if product.price.nil?%>
-              <%= link_to "Заказать", order_path(:order_name => product.name) %>
+            <% if @product.price.nil?%>
+              <%= link_to "Заказать", order_path(:order_name => @product.name) %>
             <% else %>
-              <%= product.price %> р.
+              <%= @product.price %> р.
             <% end %>
           </span>
           <hr class="bold__divider">
