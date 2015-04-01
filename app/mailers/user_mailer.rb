@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
     @body = body
     @ip_address = ip_address
 
-    mail to: 'i.borovinskiy@gmail.com',
+    mail to: 'lipetsk@megre.ru',
          subject: @subject
   end
 
@@ -19,7 +19,7 @@ class UserMailer < ActionMailer::Base
     @subject = "[ Заказ продукции с сайта ] - " + order_name
     @ip_address = ip_address
 
-    mail to: 'i.borovinskiy@gmail.com',
+    mail to: 'lipetsk@megre.ru',
          subject: @subject
   end
 
