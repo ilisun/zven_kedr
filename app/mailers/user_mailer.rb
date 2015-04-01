@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def contact_email(name, email, subject, body)
     @name = name
     @email = email
-    @subject = subject
+    @subject = "Письмо с сайта" + subject
     @body = body
 
     mail to: 'i.borovinskiy@gmail.com',
