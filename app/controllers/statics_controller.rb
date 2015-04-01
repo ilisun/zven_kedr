@@ -9,11 +9,10 @@ class StaticsController < ApplicationController
     email = params[:email]
     subject = params[:subject]
     body = params[:comments]
+
     UserMailer.contact_email(name, email, subject, body).deliver
 
-    # flash[:sent] = 'Message sent!'
     redirect_to contact_path
-
   end
 
   private

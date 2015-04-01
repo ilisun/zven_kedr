@@ -53,9 +53,8 @@
           <span class="glyphicon  glyphicon-envelope"></span> <a class="secondary-link" href="mailto:lipetsk@megre.ru"><strong>lipetsk@megre.ru</strong></a>
         </div>
         <div class="col-xs-12  col-sm-9">
-          <form validate>
             <div class="row">
-              <%= form_tag(send_contact_email_path) do %>
+              <%= form_tag (send_contact_email_path) do %>
                 <div class="col-xs-12  col-sm-4">
                   <div class="form-group">
                     <%= label_tag 'name', 'Имя', class: 'text-dark' %><span class="warning"> *</span>
@@ -82,7 +81,6 @@
                 </div>
               <% end %>
             </div>
-          </form>
         </div>
       </div>
       <div class="push-down-30">

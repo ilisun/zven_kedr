@@ -10,4 +10,5 @@ class UserMailer < ActionMailer::Base
     mail to: 'i.borovinskiy@gmail.com',
          subject: 'Welcome to My Awesome S'
   end
+
 end

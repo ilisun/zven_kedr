@@ -2,15 +2,19 @@ Rails.application.routes.draw do
   devise_for :users, :skip => :registrations
   resources :products
   resources :categories
+  resources :statics
 
-  root to: "products#main"
+
+  root to: 'products#main'
+
+
 
   match '/about',   to: 'statics#about',   via: 'get'
   match '/image',   to: 'products#image',   via: 'get'
   match '/contact',   to: 'statics#contact',   via: 'get'
   match '/shop',   to: 'products#shop',   via: 'get'
   match '/prod',   to: 'statics#prod',   via: 'get'
+  match '/send_contact_email',  to: 'statics#send_contact_email', via: :post
 
-  match '/send_contact_email', to: 'statics#send_contact_email', via: 'post'
 
 end
