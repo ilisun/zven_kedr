@@ -12,4 +12,15 @@ class UserMailer < ActionMailer::Base
          subject: @subject
   end
 
+  def order_email(name, tel, order_name, ip_address)
+    @order_name = order_name
+    @name = name
+    @tel = tel
+    @subject = "[ Заказ продукции с сайта ] - " + @order_name
+    @ip_address = ip_address
+
+    mail to: 'i.borovinskiy@gmail.com',
+         subject: @subject
+  end
+
 end

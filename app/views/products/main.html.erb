@@ -101,10 +101,10 @@
 
                     <div class="products__price">
                       <% if product.price.nil?%>
-                        <%= link_to "Заказать", contact_path %>
+                        <%= link_to "Заказать", order_path(:name => product.name) %>
                       <% else %>
                         <%= product.price %> р.
-                    <% end %>
+                      <% end %>
                     </div>
                   </div>
                 </div>
@@ -176,7 +176,11 @@
           </div>
           <div class="col-xs-4">
             <div class="products__price">
-              <%= product.price %> р.
+              <% if product.price.nil?%>
+                <%= link_to "Заказать", order_path(:name => product.name) %>
+              <% else %>
+                <%= product.price %> р.
+              <% end %>
             </div>
           </div>
         </div>
@@ -212,7 +216,13 @@
               <%= product.name %>
             <% end %>
             </h5>
-            <span class="products__price--widgets"><%= product.price %> р.</span>
+            <span class="products__price--widgets">
+              <% if product.price.nil?%>
+                <%= link_to "Заказать", order_path(:name => product.name) %>
+              <% else %>
+                <%= product.price %> р.
+              <% end %>
+            </span>
             <br><br><br>
 
             <span class="glyphicon glyphicon-star  star-on"></span>
@@ -240,7 +250,13 @@
                 <%= product.name %>
               <% end %>
             </div>
-            <span class="products__price--widgets"><%= product.price %> р.</span>
+            <span class="products__price--widgets">
+              <% if product.price.nil?%>
+                <%= link_to "Заказать", order_path(:name => product.name) %>
+              <% else %>
+                <%= product.price %> р.
+              <% end %>
+            </span>
             <br><br><br>
             <div class="products__category">
               <% product.categories.each do |category| %>

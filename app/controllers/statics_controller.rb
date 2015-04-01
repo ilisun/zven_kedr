@@ -16,6 +16,17 @@ class StaticsController < ApplicationController
     redirect_to contact_path
   end
 
+  def send_order_email
+    order_name = params[:name]
+    name = params[:name]
+    tel = params[:tel]
+    @ip_address = request.remote_ip
+
+    UserMailer.order_email(name, tel, order_name, @ip_address).deliver
+
+    redirect_to root_path
+  end
+
   private
 
   def load_categories

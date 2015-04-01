@@ -1,0 +1,57 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <nav>
+          <ol class="breadcrumb">
+
+            <li><%= link_to "Главная", root_path %></li>
+
+            <li class="active">Заказ продукции</li>
+
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container  push-down-30">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="center"><span class="light">Заказ</span> продукции</h1>
+      <hr class="divider">
+      <div class="text-shrink">
+        <p class="text-highlight-center">Заполните форму и мы обязательно свяжемся с Вами по поводу заказа!</p>
+      </div>
+      <hr class="divider  divider-about">
+      <div class="push-down-30"></div>
+      <div class="row">
+        <div class="col-xs-12  col-sm-4">
+        </div>
+        <div class="col-xs-12  col-sm-4">
+          <div class="row">
+            <%= form_tag (send_order_email_path) do %>
+              <div class="form-group">
+                <%= label_tag 'name', 'Имя', class: 'text-dark' %><span class="warning"> *</span>
+                <%= text_field_tag 'name', nil, class: 'form-control  form-control--contact', placeholder: 'Имя' %>
+              </div>
+              <div class="form-group">
+                <%= label_tag 'tel', 'Телефон', class: 'text-dark' %><span class="warning"> *</span>
+                <%= text_field_tag 'tel', nil, class: 'form-control  form-control--contact', placeholder: 'Имя' %>
+              </div>
+              <span class="hidden-xs">Отмечены <span class="warning">*</span> обязательные к заполнению</span>
+
+              <div class="right">
+                <%= submit_tag nil, class: 'btn btn-default btn-about pull-right' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12  col-sm-4">
+      </div>
+
+    </div>
+  </div>
+</div>
+
