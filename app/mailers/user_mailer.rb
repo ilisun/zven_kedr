@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
     @body = body
 
     mail to: 'i.borovinskiy@gmail.com',
-         subject: 'Welcome to My Awesome S'
+         subject: @subject
   end
 
 end
