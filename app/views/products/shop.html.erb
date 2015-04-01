@@ -86,7 +86,11 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="products__price">
-                      <%= product.price %> р.
+                      <% if product.price.nil?%>
+                        <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                      <% else %>
+                        <%= product.price %> р.
+                      <% end %>
                     </div>
                   </div>
                   <div class="col-xs-12">
