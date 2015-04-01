@@ -30,7 +30,7 @@
         </div>
         <div class="col-xs-12  col-sm-4">
           <div class="row">
-            <%= form_tag (send_order_email_path) do %>
+            <%= form_tag send_order_email_path(:order_name => params[:order_name]) do %>
               <div class="form-group">
                 <%= label_tag 'name', 'Имя', class: 'text-dark' %><span class="warning"> *</span>
                 <%= text_field_tag 'name', nil, class: 'form-control  form-control--contact', placeholder: 'Имя' %>
