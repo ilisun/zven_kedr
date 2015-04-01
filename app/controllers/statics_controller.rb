@@ -9,8 +9,9 @@ class StaticsController < ApplicationController
     email = params[:email]
     subject = params[:subject]
     body = params[:comments]
+    @ip_address = request.remote_ip
 
-    UserMailer.contact_email(name, email, subject, body).deliver
+    UserMailer.contact_email(name, email, subject, body, @ip_address).deliver
 
     redirect_to contact_path
   end
