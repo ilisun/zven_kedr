@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14861272-0e04-4dcc-8455-87268b188431" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/googlec095d1106949a5f4.html" afterPath="$PROJECT_DIR$/app/views/statics/googlec095d1106949a5f4.html.erb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/statics/googlec095d1106949a5f4.html.erb" afterPath="$PROJECT_DIR$/public/googlec095d1106949a5f4.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -109,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.3986711" vertical-offset="0" max-vertical-offset="903">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -423,6 +423,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/views/statics" />
       <recent name="$PROJECT_DIR$/app/views/static" />
     </key>
@@ -1047,7 +1048,7 @@
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3986711" vertical-offset="0" max-vertical-offset="903">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>

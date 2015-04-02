@@ -18,6 +18,5 @@ Rails.application.routes.draw do
 
   match '/send_contact_email',  to: 'statics#send_contact_email', via: :post
   match '/send_order_email',  to: 'statics#send_order_email', via: :post
-  match '/googlec095d1106949a5f4',   to: 'statics#googlec095d1106949a5f4',   via: 'get'
 
 end
