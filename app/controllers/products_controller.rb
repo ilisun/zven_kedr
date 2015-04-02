@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
 
     if @product.update(product_params)
       if params[:product][:image].blank?
-        redirect_to products_path(:page => params[:main_page])
+        redirect_to products_path(:page => params[:page])
       else
         render :crop
       end

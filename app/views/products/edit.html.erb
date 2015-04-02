@@ -2,7 +2,7 @@
   <h1 class="center"><span class="light">Редактирование</span> товара</h1>
   <hr class="divider">
   <div class="row">
-    <%= form_for @product do |f| %>
+    <%= form_for @product, :url => {:action => 'update', :controller => 'products', :page => params[:page]} do |f| %>
       <div class="col-xs-12 col-sm-4">
         <%= f.label :Название %> <br>
         <%= f.text_field :name, class: 'form-control  form-control--contact' %> <br>
