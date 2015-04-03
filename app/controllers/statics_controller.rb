@@ -30,7 +30,7 @@ class StaticsController < ApplicationController
   private
 
   def load_categories
-    @categories = Category.all
+    @categories = Category.where("id > ?", '4').order(:id)
   end
 
 end
