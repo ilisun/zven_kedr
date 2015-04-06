@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
 
     if @product.update(product_params)
       if params[:product][:image].blank?
-        redirect_to products_path(:page => params[:page])
+        redirect_to products_path(:page => session[:npage])
       else
         render :crop
       end
@@ -81,7 +81,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    # params.require(:product).permit(:name, :price, :description, :image)
     params.fetch(:product, {}).permit!
   end
 

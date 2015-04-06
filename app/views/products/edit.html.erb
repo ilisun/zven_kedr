@@ -2,7 +2,7 @@
   <h1 class="center"><span class="light">Редактирование</span> товара</h1>
   <hr class="divider">
   <div class="row">
-    <%= form_for @product, :url => {:action => 'update', :controller => 'products', :page => params[:page]} do |f| %>
+    <%= form_for @product do |f| %>
       <div class="col-xs-12 col-sm-4">
         <%= f.label :Название %> <br>
         <%= f.text_field :name, class: 'form-control  form-control--contact' %> <br>
@@ -36,7 +36,7 @@
         <%= f.file_field :image %>
         <hr class="title__divider">
         <%= f.submit "Сохранить", class: "btn btn-primary--reverse-transition" %>
-        <%= link_to 'Назад', products_path(:page => params[:page] ), class: "btn btn-info--transition" %><br>
+        <%= link_to 'Назад', products_path(:page => session[:npage]), class: "btn btn-info--transition" %><br>
       </div>
     <% end %>
   </div>
