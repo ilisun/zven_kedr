@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.jcrop
 //= require papercrop
+//= require main
 //= require turbolinks
 //= require_tree .
