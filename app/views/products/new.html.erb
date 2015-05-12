@@ -8,6 +8,9 @@
         <%= f.text_field :name, class: 'form-control  form-control--contact' %> <br>
         <%= f.label :Цена %> <br>
         <%= f.text_field :price, class: 'form-control  form-control--contact' %> <br>
+        <%= f.check_box :cb_old_price, class: 'check_box' %>
+        <%= f.label :Старая_цена %> <br>
+        <%= f.text_field :old_price, class: 'form-control  form-control--contact' %> <br>
         <%= f.label :Описание %> <br>
         <%= f.text_area :description, class: 'form-control  form-control--contact  form-control--big', rows: 10 %> <br>
       </div>

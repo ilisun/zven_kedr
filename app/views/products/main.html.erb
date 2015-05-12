@@ -97,17 +97,28 @@
                       <% end %>
                     </h5>
                   </div>
-                  <div class="col-xs-4">
 
-                    <div class="products__price">
-                      <% if product.price.nil?%>
-                        <%= link_to "Заказать", order_path(:order_name => product.name) %>
-                      <% else %>
-                        <%= product.price %> р.
-                      <% end %>
+                  <div>
+                    <div class="col-xs-4">
+                      <div class="products__price">
+                        <% if product.price.nil? %>
+                          <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                        <% else %>
+                          <%= product.price %> р.
+                        <% end %>
+                      </div>
                     </div>
+
+                    <% if product.cb_old_price? && !product.price.nil? %>
+                      <div class="col-xs-4">
+                        <div class="products__price line-through red">
+                          <%= product.old_price %> р.
+                        </div>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
+
                 <div class="products__category">
                   <% product.categories.each do |category| %>
                     <% if (category.id > 4) %>
@@ -174,14 +185,25 @@
               <% end %>
             </h5>
           </div>
-          <div class="col-xs-4">
-            <div class="products__price">
-              <% if product.price.nil?%>
-                <%= link_to "Заказать", order_path(:order_name => product.name) %>
-              <% else %>
-                <%= product.price %> р.
-              <% end %>
+
+          <div>
+            <div class="col-xs-4">
+              <div class="products__price">
+                <% if product.price.nil? %>
+                  <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                <% else %>
+                  <%= product.price %> р.
+                <% end %>
+              </div>
             </div>
+
+            <% if product.cb_old_price? && !product.price.nil? %>
+              <div class="col-xs-4">
+                <div class="products__price line-through red">
+                  <%= product.old_price %> р.
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="products__category">
@@ -216,6 +238,8 @@
               <%= product.name %>
             <% end %>
             </h5>
+
+
             <span class="products__price--widgets">
               <% if product.price.nil?%>
                 <%= link_to "Заказать", order_path(:name => product.name) %>
@@ -223,7 +247,14 @@
                 <%= product.price %> р.
               <% end %>
             </span>
-            <br><br><br>
+            <br>
+
+            <% if product.cb_old_price? && !product.price.nil? %>
+              <span class="products__price--widgets line-through red">
+                <%= product.old_price %> р.
+              </span>
+            <% end %>
+            <br><br>
 
             <span class="glyphicon glyphicon-star  star-on"></span>
             <span class="glyphicon glyphicon-star  star-on"></span>
@@ -257,7 +288,13 @@
                 <%= product.price %> р.
               <% end %>
             </span>
-            <br><br><br>
+            <br>
+            <% if product.cb_old_price? && !product.price.nil? %>
+              <span class="products__price--widgets line-through red">
+                <%= product.old_price %> р.
+              </span>
+            <% end %>
+            <br><br>
             <div class="products__category">
               <% product.categories.each do |category| %>
                 <% if (category.id > 4) %>
