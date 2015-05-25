@@ -6366,7 +6366,7 @@ pre {
     text-decoration: none
 }
 
-.banners--big, .banners--medium, .banners--small {
+.banners--medium, .banners--small {
     border-radius: 3px;
     margin: 18px 0;
     color: #f3f2eb;
@@ -6374,6 +6374,16 @@ pre {
     font-size: 15px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, .2)
 }
+
+.banners--big {
+    border-radius: 3px;
+    margin: 18px 0;
+    color: #f3f2eb;
+    font-weight: 600;
+    font-size: 26px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .2)
+}
+
 
 .banners {
     background: #f3f2eb
@@ -7733,16 +7743,6 @@ html.no-touch .product-overlay__stock {
         padding-right: 16px
     }
 
-    .single-product__price:after {
-        position: absolute;
-        content: "";
-        background-color: #b1b0a7;
-        width: 1px;
-        height: 18px;
-        right: 0;
-        top: 50%;
-        margin-top: -8px
-    }
 }
 
 .single-product__rating {

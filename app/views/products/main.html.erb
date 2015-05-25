@@ -90,7 +90,7 @@
                   </div>
                 </figure>
                 <div class="row">
-                  <div class="col-xs-8">
+                  <div class="col-xs-7">
                     <h5 class="products__title">
                       <%= link_to product, class: "products__link  js--isotope-title" do %>
                         <%= product.name %>
@@ -99,7 +99,7 @@
                   </div>
 
                   <div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-5">
                       <div class="products__price">
                         <% if product.price.nil? %>
                           <%= link_to "Заказать", order_path(:order_name => product.name) %>
@@ -110,7 +110,7 @@
                     </div>
 
                     <% if product.cb_old_price? && !product.price.nil? %>
-                      <div class="col-xs-4">
+                      <div class="col-xs-5">
                         <div class="products__price line-through red">
                           <%= product.old_price %> р.
                         </div>
@@ -134,26 +134,17 @@
       </div>
     </div>
   </div>
-
-  <!-- Banners medium -->
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <a href="shop.html">
-        <div class="banners--medium">
-          <span class="banners-text">Природная<strong> аптека</strong></span>
-          <span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span>
+  <!-- Banners big -->
+  <div class="banners--big  banners--big-left">
+    <div class="row">
+      <div class="col-xs-12  col-md-12">
+        <div class="banners--big__text">
+          Возможна отправка нашей продукции в другие города по <strong>специальным ценам!</strong>
         </div>
-      </a>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      <a href="shop.html">
-        <div class="banners--medium">
-          <span class="banners-text">Скидки, акции,<strong> новости</strong></span>
-          <span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
+
   <!-- Navigation -->
   <div class="products-navigation  push-down-15">
     <div class="products-navigation__title">
@@ -178,7 +169,7 @@
           </div>
         </figure>
         <div class="row">
-          <div class="col-xs-8">
+          <div class="col-xs-7">
             <h5 class="products__title">
               <%= link_to product, class: "products__link  js--isotope-title" do %>
                 <%= product.name %>
@@ -187,7 +178,7 @@
           </div>
 
           <div>
-            <div class="col-xs-4">
+            <div class="col-xs-5">
               <div class="products__price">
                 <% if product.price.nil? %>
                   <%= link_to "Заказать", order_path(:order_name => product.name) %>
@@ -198,13 +189,14 @@
             </div>
 
             <% if product.cb_old_price? && !product.price.nil? %>
-              <div class="col-xs-4">
+              <div class="col-xs-5">
                 <div class="products__price line-through red">
                   <%= product.old_price %> р.
                 </div>
               </div>
             <% end %>
           </div>
+
         </div>
         <div class="products__category">
           <% product.categories.each do |category| %>
@@ -221,7 +213,26 @@
     <% end %>
   <% end %>
 
-  <!-- Banners big -->
+  <!-- Banners medium -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <a href="shop.html">
+        <div class="banners--medium">
+          <span class="banners-text">Природная<strong> аптека</strong></span>
+          <span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <a href="shop.html">
+        <div class="banners--medium">
+          <span class="banners-text">Скидки, акции,<strong> новости</strong></span>
+          <span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="widgets__navigation">
