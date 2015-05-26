@@ -26,6 +26,7 @@
     </div>
   </div>
 </div>
+
 <div class="banners  push-down-30">
   <div class="container">
     <div class="row">
@@ -216,20 +217,20 @@
   <!-- Banners medium -->
   <div class="row">
     <div class="col-xs-12 col-sm-6">
-      <a href="shop.html">
+      <%= link_to shop_path do %>
         <div class="banners--medium">
           <span class="banners-text">Природная<strong> аптека</strong></span>
           <span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span>
         </div>
-      </a>
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-6">
-      <a href="shop.html">
+      <%= link_to main_articles_path do %>
         <div class="banners--medium">
           <span class="banners-text">Скидки, акции,<strong> новости</strong></span>
           <span class="glyphicon  glyphicon-circle  glyphicon-chevron-right"></span>
         </div>
-      </a>
+      <% end %>
     </div>
   </div>
 
@@ -336,7 +337,7 @@
           <br><br>
           Гармоничное развитие и рост ребенка зависит от полноценного состава его рациона питания и самый идеальный продукт – это грудное материнское молоко, которое тоже должно быть максимально полноценным. Источником практически всех незаменимых питательных веществ являются ядра кедрового ореха, с рекордно высоким содержанием белка (25г на 100г), имеющим все 20 аминокислот и отличающимся высокой усвояемостью до 95%.
         </p>
-        <%= link_to "Подробнее...", prod_path %>
+        <%= link_to "Подробнее...", main_articles_path %>
       </div>
     </div>
   </div>
