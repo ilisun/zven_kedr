@@ -1,0 +1,26 @@
+<div class="container">
+  <br><br>
+  <div class="row">
+    <div class="col-sm-12">
+      <hr class="divider">
+
+      <%= form_for @article do |f| %>
+        <h3><%= f.label :Название_статьи %></h3>
+        <%= f.text_field :name, class: 'form-control  form-control--contact' %>
+        <h3><%= f.label :Содержимое_статьи %></h3>
+        <div id="fgg2">
+        <%= f.cktext_area :body, rows: 20, :id => 'ck-artic' %><br><br>
+        </div>
+        <%= f.submit "Сохранить", class: "btn btn-primary--reverse-transition" %>
+      <% end %>
+
+      <hr class="divider">
+      <br>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  CKEDITOR.replace('ck-artic')
+</script>

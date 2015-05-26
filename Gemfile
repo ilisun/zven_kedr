@@ -18,6 +18,8 @@ gem 'dotenv'
 gem 'dotenv-deployment', require: 'dotenv/deployment'
 gem 'therubyracer'
 gem 'devise'
+gem 'ckeditor'
+gem 'truncate_html'
 
 gem 'spring',        group: :development
 

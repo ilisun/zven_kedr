@@ -1,0 +1,48 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <br><br>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= link_to "Добавить статью", new_article_path, class: "btn btn-warning--reverse-transition" %>
+
+      <hr class="divider">
+      <table class="table table-theme table-striped">
+        <thead>
+        <tr>
+          <th>Название</th>
+          <th>Дата публикации</th>
+          <th>Тело статьи</th>
+          <th>Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% @articles.each do |article| %>
+          <tr class="active">
+            <td><%= article.name.html_safe %></td>
+            <td><%= article.created_at %></td>
+            <td>
+              <div style="height:150px;overflow:auto;">
+                <%= article.body.html_safe %>
+              </div>
+            </td>
+            <td>
+              <%= link_to 'Редакт.', edit_article_path(article, session[:npage]=params[:page]) %>
+              <%= link_to 'Удалить', article_path(article), method: :delete, data: { confirm: 'Вы действительно хотите удалить статью?' } %>
+            </td>
+          </tr>
+        <% end %>
+
+        </tbody>
+      </table>
+
+      <hr class="divider">
+      <div class="shop__pagination">
+        <ul class="pagination">
+
+          <%= paginate @articles %>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

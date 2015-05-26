@@ -1,0 +1,55 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <nav>
+          <ol class="breadcrumb">
+            <li><%= link_to "Главная", root_path %></li>
+            <li class="active">Статьи</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container  push-down-30">
+
+  <div class="row">
+    <div class="col-xs-12  blog-alternative">
+      <section>
+
+        <% @articles.each do |article| %>
+
+          <article>
+            <div class="row">
+              <div class="col-xs-8  col-xs-offset-2">
+                <header>
+                  <h3 class="blog-title">
+                    <%= link_to article do %>
+                      <%= article.name.html_safe %>
+                    <% end %>
+                  </h3>
+                  <div class="metadata  push-down-30">
+                    <time class="blog__date"><%= l article.created_at, :format => "%e %B %Y" %></time>
+                  </div>
+                </header>
+                <div class="blog-content__text">
+                  <%= truncate_html(article.body.html_safe, length: 500, omission: '...') %>
+                </div>
+              </div>
+            </div>
+          </article>
+          <hr class="divider">
+
+        <% end %>
+
+      </section>
+
+      <nav class="center">
+        <ul class="pagination">
+          <%= paginate @articles %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

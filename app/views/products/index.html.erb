@@ -1,4 +1,4 @@
-<div class="container" xmlns="http://www.w3.org/1999/html">
+<div class="container">
   <br><br>
   <div class="row">
     <div class="col-sm-3">
@@ -34,7 +34,17 @@
     </div>
 
     <div class="col-sm-9">
-      <%= link_to "Добавить продукт", new_product_path, class: "btn btn-warning--reverse-transition" %>
+      <div class="row">
+        <div class="col-sm-2">
+          <%= link_to "Добавить продукт", new_product_path, class: "btn btn-warning--reverse-transition" %>
+        </div>
+        <div class="col-sm-8">
+        </div>
+        <div class="col-sm-2">
+          <%= link_to "Статьи", articles_path, class: "btn btn-info--transition" %>
+        </div>
+      </div>
+
       <hr class="divider">
       <table class="table table-theme table-striped">
         <thead>
