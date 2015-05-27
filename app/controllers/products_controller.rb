@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     if params[:cat]
       @products = Product.joins(:categories).where("categories.id = ?", params[:cat]).page(params[:page]).order(:id).per(16)
     else
-      @products = Product.page(params[:page]).order(:id).per(16)
+      @products = Product.page(params[:page]).order(:id).per(2)
     end
   end
 
