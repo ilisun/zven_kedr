@@ -7406,6 +7406,10 @@ html.no-touch .product-overlay__stock {
     background-image: url(/assets/light_paper_pattern.jpg)
 }
 
+.video-paper-pattern {
+    background-color: #668aa8;
+}
+
 .testimonials {
     padding: 50px 0;
     text-align: center

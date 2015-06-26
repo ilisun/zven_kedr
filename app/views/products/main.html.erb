@@ -62,6 +62,10 @@
   </div>
 </div>
 <div class="container">
+
+
+
+
   <!-- Navigation for products -->
   <div class="products-navigation  push-down-15">
     <div class="row">
@@ -70,16 +74,30 @@
           <h3><span class="light">Кладовая</span> природы</h3>
         </div>
       </div>
+      <div class="col-xs-12  col-sm-4">
+        <div class="products-navigation__arrows">
+          <a href="#js--latest-products-carousel" data-slide="prev"><span class="glyphicon  glyphicon-chevron-left  glyphicon-circle  products-navigation__arrow"></span></a>&nbsp;
+          <a href="#js--latest-products-carousel" data-slide="next"><span class="glyphicon  glyphicon-chevron-right  glyphicon-circle  products-navigation__arrow"></span></a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Products -->
   <div id="js--latest-products-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
     <div class="carousel-inner">
-      <div class="item active">
-        <div class="row">
 
-          <% @m1_products.each do |product| %>
+      <% @m1_products.each_with_index do |product, i| %>
+        <% puts @m1_products.count %>
+        <% puts @m1_products.count+1 %>
+
+        <% if i%4 == 0 && i == 0 %>
+          <div class="item active">
+          <div class="row">
+        <% elsif i%4 == 0 && i > 0 %>
+          <div class="item">
+          <div class="row">
+        <% end %>
+
             <div class="col-xs-6 col-sm-3  js--isotope-target  js--cat-5">
               <div class="products__single">
                 <figure class="products__image">
@@ -129,10 +147,19 @@
                 </div>
               </div>
             </div>
-          <% end %>
 
+        <% if (i+1)%4 == 0 %>
+          </div>
+          </div>
+        <% end %>
+
+      <% end %>
+
+      <% if @m1_products.count%4 != 0 %>
         </div>
-      </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
   <!-- Banners big -->
@@ -140,7 +167,7 @@
     <div class="row">
       <div class="col-xs-12  col-md-12">
         <div class="banners--big__text mega">
-          Возможна отправка нашей продукции в другие города по <strong>специальным ценам!</strong>
+          Возможна отправка продукции в другие города по специальным ценам!<br>Звоните по телефону <strong>8-905-684-57-57</strong> или пишите: <strong>lipetsk@megre.ru</strong>
         </div>
       </div>
     </div>
@@ -342,6 +369,23 @@
     </div>
   </div>
 </div>
+
+<div class="testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <iframe width="373" height="210" src="https://www.youtube.com/embed/i7sHtsR435s" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4">
+        <iframe width="373" height="210" src="https://www.youtube.com/embed/d6cAIGvsMDI" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4">
+        <iframe width="373" height="210" src="https://www.youtube.com/embed/wqzmu8IwlTU" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="testimonials  light-paper-pattern">
   <div class="container">
     <div class="row">

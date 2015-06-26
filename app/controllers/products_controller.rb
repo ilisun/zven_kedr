@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def main
-    @m1_products = Product.joins(:categories).where("categories.id = ?", '1').order("RANDOM()").take(4)
+    @m1_products = Product.joins(:categories).where("categories.id = ?", '1').order("RANDOM()").take(16)
     @m2_products = Product.joins(:categories).where("categories.id = ?", '2').order("RANDOM()").take(8)
     @m3_products = Product.joins(:categories).where("categories.id = ?", '3').order("RANDOM()").take(4)
     @m4_products = Product.joins(:categories).where("categories.id = ?", '4').order("RANDOM()").take(4)
