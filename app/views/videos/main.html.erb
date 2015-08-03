@@ -1,0 +1,55 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <nav>
+          <ol class="breadcrumb">
+            <li><%= link_to "Главная", root_path %></li>
+            <li class="active">Видео</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container  push-down-30">
+
+  <div class="row">
+    <div class="col-xs-12  blog-alternative">
+      <section>
+
+        <% @videos.each do |video| %>
+
+          <article>
+            <div class="row">
+              <div class="col-xs-8  col-xs-offset-2">
+                <header>
+                  <h3 class="blog-title">
+                    <%= link_to video do %>
+                      <%= video.name.html_safe %>
+                    <% end %>
+                  </h3>
+                  <div class="metadata  push-down-30">
+                    <time class="blog__date"><%= l video.created_at, :format => "%e %B %Y" %></time>
+                  </div>
+                </header>
+                <div class="blog-content__text">
+                  <%= truncate_html(video.body.html_safe, length: 500, omission: '...') %>
+                </div>
+              </div>
+            </div>
+          </article>
+          <hr class="divider">
+
+        <% end %>
+
+      </section>
+
+      <nav class="center">
+        <ul class="pagination">
+          <%= paginate @videos %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

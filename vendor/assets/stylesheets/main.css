@@ -8653,3 +8653,7 @@ html.no-touch .product-overlay__stock {
 .red {
     color : #b03523 !important;
 }
+
+.soc {
+    padding: 7px;
+}

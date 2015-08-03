@@ -10,7 +10,9 @@
 
   <% @categories.each do |category| %>
       <tr class="active">
-        <td><%= category.name %></td>
+        <td>
+        <%= best_in_place category, :name, :inner_class => 'form-control  form-control--contact', :type => :input %>
+        </td>
         <td>
           <%= link_to 'Редакт.', edit_category_path(category) %>
           <%= link_to 'Удалить', category_path(category), method: :delete, data: { confirm: 'Вы действительно хотите удалить запись?' } %>

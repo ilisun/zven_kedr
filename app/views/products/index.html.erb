@@ -31,6 +31,70 @@
 
       <hr class="divider">
 
+      <!-- Opening Times Widget -->
+      <div class="sidebar-item  opening-time  light-paper-pattern">
+        <h3 class="opening-time__title">Режим работы</h3>
+        <hr class="divider-dark">
+        <div class="time-table  js--timetable">
+          <dl class="week-day" data-day="1">
+            <dt>
+              Понедел.
+            </dt>
+            <dd>
+              <%= best_in_place @operation, :monday, :inner_class => 'form-control  form-control--contact', :type => :input %>
+            </dd>
+          </dl>
+          <dl class="week-day" data-day="2">
+            <dt>
+              Вторник
+            </dt>
+            <dd>
+              <%= best_in_place @operation, :tuesday, :inner_class => 'form-control  form-control--contact', :type => :input %>
+            </dd>
+          </dl>
+          <dl class="week-day" data-day="3">
+            <dt>
+              Среда
+            </dt>
+            <dd>
+              <%= best_in_place @operation, :wednesday, :inner_class => 'form-control  form-control--contact', :type => :input %>
+            </dd>
+          </dl>
+          <dl class="week-day" data-day="4">
+            <dt>
+              Четверг
+            </dt>
+            <dd>
+              <%= best_in_place @operation, :thursday, :inner_class => 'form-control  form-control--contact', :type => :input %>
+            </dd>
+          </dl>
+          <dl class="week-day" data-day="5">
+            <dt>
+              Пятница
+            </dt>
+            <dd>
+              <%= best_in_place @operation, :friday, :inner_class => 'form-control  form-control--contact', :type => :input %>
+            </dd>
+          </dl>
+          <dl class="week-day" data-day="6">
+            <dt>
+              Суббота
+            </dt>
+            <dd>
+              <%= best_in_place @operation, :saturday, :inner_class => 'form-control  form-control--contact', :type => :input %>
+            </dd>
+          </dl>
+          <dl class="week-day  closed" data-day="0">
+            <dt>
+              Воскрес.
+            </dt>
+            <dd>
+              <%= best_in_place @operation, :sunday, :inner_class => 'form-control  form-control--contact', :type => :input %>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
     </div>
 
     <div class="col-sm-9">
@@ -38,10 +102,13 @@
         <div class="col-sm-2">
           <%= link_to "Добавить продукт", new_product_path, class: "btn btn-warning--reverse-transition" %>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-6">
         </div>
         <div class="col-sm-2">
           <%= link_to "Статьи", articles_path, class: "btn btn-info--transition" %>
+        </div>
+        <div class="col-sm-2">
+          <%= link_to "Видео", videos_path, class: "btn btn-info--transition" %>
         </div>
       </div>
 

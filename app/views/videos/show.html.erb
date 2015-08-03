@@ -1,0 +1,41 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <nav>
+          <ol class="breadcrumb">
+            <li><%= link_to "Главная", root_path %></li>
+            <li><%= link_to "Видео", main_videos_path %></li>
+            <li class="active"><%= @video.name.html_safe %></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container  push-down-30">
+
+  <div class="row">
+    <div class="col-xs-12  blog-alternative">
+      <section>
+          <article>
+            <div class="row">
+              <div class="col-xs-8  col-xs-offset-2">
+                <header>
+                  <h3 class="blog-title">
+                    <a href="single-post.html"><span class="light"></span><%= @video.name.html_safe %></a></h3>
+                  <div class="metadata  push-down-30">
+                    <time class="blog__date"><%= l @video.created_at, :format => "%e %B %Y" %></time>
+                  </div>
+                </header>
+                <div class="blog-content__text">
+                  <%= @video.body.html_safe %>
+                </div>
+              </div>
+            </div>
+          </article>
+          <hr class="divider">
+      </section>
+    </div>
+  </div>
+</div>

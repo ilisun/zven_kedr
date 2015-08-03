@@ -1,0 +1,48 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <br><br>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= link_to "Добавить видео", new_video_path, class: "btn btn-warning--reverse-transition" %>
+
+      <hr class="divider">
+      <table class="table table-theme table-striped">
+        <thead>
+        <tr>
+          <th>Название</th>
+          <th>Дата публикации</th>
+          <th>Тело публикации</th>
+          <th>Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% @videos.each do |video| %>
+          <tr class="active">
+            <td><%= video.name.html_safe %></td>
+            <td><%= video.created_at %></td>
+            <td>
+              <div style="height:150px;overflow:auto;">
+                <%= video.body.html_safe %>
+              </div>
+            </td>
+            <td>
+              <%= link_to 'Редакт.', edit_video_path(video, session[:npage]=params[:page]) %>
+              <%= link_to 'Удалить', video_path(video), method: :delete, data: { confirm: 'Вы действительно хотите удалить статью?' } %>
+            </td>
+          </tr>
+        <% end %>
+
+        </tbody>
+      </table>
+
+      <hr class="divider">
+      <div class="shop__pagination">
+        <ul class="pagination">
+
+          <%= paginate @videos %>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

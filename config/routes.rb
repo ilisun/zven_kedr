@@ -4,8 +4,14 @@ Rails.application.routes.draw do
   resources :products
   resources :categories
   resources :statics
+  resources :operations
 
   resources :articles do
+    collection do
+      get 'main'
+    end
+  end
+  resources :videos do
     collection do
       get 'main'
     end

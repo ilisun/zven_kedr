@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
     @products = Product.page(params[:page]).order(:id).per(8)
     @products_all = Product.all
     @categories = Category.all.order(:id)
+    @operation = Operation.find(1)
   end
 
   def shop
