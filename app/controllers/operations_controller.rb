@@ -1,7 +1,12 @@
 class OperationsController < ApplicationController
+  before_action :load_categories
 
   def show
     @operation = Operation.find(params[:id])
+  end
+
+  def new
+    @operation = Operation.new
   end
 
   def edit
@@ -9,7 +14,7 @@ class OperationsController < ApplicationController
   end
 
   def create
-    @operation = Operation.new(category_params)
+    @operation = Operation.new(operation_params)
 
     if @operation.save
       redirect_to products_path
@@ -26,7 +31,12 @@ class OperationsController < ApplicationController
 
   private
 
+  def load_categories
+    @categories = Category.where("id > ?", '4').order(:id)
+  end
+
   def operation_params
     params.require(:operation).permit!
   end
+
 end

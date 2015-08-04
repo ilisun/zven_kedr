@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="center"><span class="light">Добавить</span></h1>
+  <hr class="divider">
+  <div class="row">
+    <%= form_for @operation, :html => {:multipart => true} do |f| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.text_field :monday, class: 'form-control  form-control--contact' %> <br>
+        <%= f.text_field :tuesday, class: 'form-control  form-control--contact' %> <br>
+        <%= f.text_field :wednesday, class: 'form-control  form-control--contact' %> <br>
+        <%= f.text_field :thursday, class: 'form-control  form-control--contact' %> <br>
+        <%= f.text_field :friday, class: 'form-control  form-control--contact' %> <br>
+        <%= f.text_field :saturday, class: 'form-control  form-control--contact' %> <br>
+        <%= f.text_field :sunday, class: 'form-control  form-control--contact' %> <br>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <%= f.submit "Добавить товар", class: "btn btn-primary--reverse-transition" %>
+      </div>
+    <% end %>
+  </div>
+</div>
