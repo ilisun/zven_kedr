@@ -5,23 +5,23 @@ class OperationsController < ApplicationController
     @operation = Operation.find(params[:id])
   end
 
-  def new
-    @operation = Operation.new
-  end
+  # def new
+  #   @operation = Operation.new
+  # end
 
   def edit
     @operation = Operation.find(params[:id])
   end
 
-  def create
-    @operation = Operation.new(operation_params)
-
-    if @operation.save
-      redirect_to products_path
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @operation = Operation.new(operation_params)
+  #
+  #   if @operation.save
+  #     redirect_to products_path
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def update
     @operation = Operation.find(params[:id])
