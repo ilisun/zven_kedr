@@ -136,6 +136,7 @@
     <orderEntry type="library" scope="PROVIDED" name="capistrano (v3.4.0, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-bundler (v1.1.4, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-rails (v1.1.2, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="capistrano-rails-console (v1.0.0, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-rvm (v0.1.2, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ckeditor (v4.1.2, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="climate_control (v0.0.3, RVM: ruby-2.2.0 [zven_kedr]) [gem]" level="application" />
