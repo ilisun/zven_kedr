@@ -9,4 +9,24 @@ module ApplicationHelper
     request.remote_ip
   end
 
+  def remote_city
+    uri = URI.parse("http://api.sypexgeo.net/json/#{remote_ip}")
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Get.new(uri.request_uri)
+
+    response = http.request(request)
+
+    if response.code == "200"
+
+      json = JSON.parse(response.body.force_encoding('UTF-8'))
+      city = json["city"]["name_ru"]
+      return city
+
+    else
+      return "Ошибка определиния города"
+    end
+  end
+
+
 end
