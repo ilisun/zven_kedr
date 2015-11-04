@@ -5,3 +5,7 @@
 #
 #   cities = City.prod([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.prod(name: 'Emanuel', city: cities.first)
+
+User.create(username: "test", password: "Qwerty12")
+
+Operation.create(monday: "10:00 - 20:00", tuesday: "10:00 - 20:00", wednesday: "10:00 - 20:00", thursday: "10:00 - 20:00", friday: "10:00 - 20:00", sunday: "10:00 - 20:00", saturday: "10:00 - 20:00")
