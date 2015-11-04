@@ -5,4 +5,8 @@ module ApplicationHelper
     return @ip.ip_address
   end
 
+  def remote_ip
+    request.remote_ip
+  end
+
 end
