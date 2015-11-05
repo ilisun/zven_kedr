@@ -10,21 +10,28 @@ module ApplicationHelper
   end
 
   def remote_city
-    uri = URI.parse("http://api.sypexgeo.net/json/#{remote_ip}")
 
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Get.new(uri.request_uri)
+    if !session[:city]
 
-    response = http.request(request)
+      uri = URI.parse("http://api.sypexgeo.net/json/#{remote_ip}")
 
-    if response.code == "200"
+      http = Net::HTTP.new(uri.host, uri.port)
+      request = Net::HTTP::Get.new(uri.request_uri)
 
-      json = JSON.parse(response.body.force_encoding('UTF-8'))
-      city = json["city"]["name_ru"]
-      return city
+      response = http.request(request)
 
+      if response.code == "200"
+
+        json = JSON.parse(response.body.force_encoding('UTF-8'))
+        city = json["city"]["name_ru"]
+        session[:city] = city
+        return city
+
+      else
+        return "Ошибка определиния города"
+      end
     else
-      return "Ошибка определиния города"
+      return session[:city]
     end
   end
 
