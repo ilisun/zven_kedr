@@ -6,8 +6,8 @@ module ApplicationHelper
   end
 
   def remote_ip
-    #request.remote_ip
-    return "5.142.114.166"
+    request.remote_ip
+    # return "5.142.114.166"
   end
 
   def remote_city
