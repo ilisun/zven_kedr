@@ -20,6 +20,8 @@ $ ->
   session()
 
 $(document).on "page:load", ->
+  ready()
   session()
 $(document).on "page:change", ->
+  ready()
   session()

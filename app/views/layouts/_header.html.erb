@@ -50,7 +50,8 @@
         <div class="top__menu">
           <ul class="nav  nav-pills">
             <li class="dropdown  js--mobile-dropdown"><a href="#registerModal" role="button" data-toggle="modal"><%= remote_city %></a></li>
-            <% if !session[:city] %>
+            <% if !session[:first_city] %>
+              <% session[:first_city] = "true" %>
               <a href="#registerModal" id="modal-open" role="button" data-toggle="modal" hidden="hidden"></a>
             <% end %>
           </ul>
