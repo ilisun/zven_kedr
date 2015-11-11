@@ -25,6 +25,20 @@
               <li><%= link_to "Производство", prod_path %></li>
               <li><%= link_to "Продукция", shop_path %></li>
               <li><%= link_to "Контакты", contact_path %></li>
+              <% unless user_signed_in? %>
+                <li class="dropdown  js--mobile-dropdown">
+                  <%= link_to "Login", new_user_session_path %>
+                </li>
+              <% else %>
+                <li class="dropdown  js--mobile-dropdown">
+                  <a class="dropdown-toggle" href="#">
+                    <%= current_user.username %> <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
+                  </ul>
+                </li>
+              <% end %>
               <% if user_signed_in? %>
                 <li><%= link_to "Админка", products_path %></li>
               <% end %>
@@ -70,7 +84,7 @@
         </div>
         <div class="col-xs-12  col-sm-5">
           <div class="footer__text">
-            Made with <span class="glyphicon  glyphicon-heart"></span> by <a class="footer__link" href="http://www.initweb.ru/" target="_blank">INITweb</a>
+            Made with <span class="glyphicon  glyphicon-heart"></span> by <a class="footer__link" href="http://www.initweb.ru/" target="_blank">Borovinskiy.com</a>
           </div>
         </div>
       </div>

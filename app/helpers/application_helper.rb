@@ -6,10 +6,13 @@ module ApplicationHelper
   end
 
   def remote_ip
-    request.remote_ip
+    #request.remote_ip
+    return "5.142.114.166"
   end
 
   def remote_city
+
+    puts session.to_hash
 
     if !session[:city]
 
@@ -23,10 +26,10 @@ module ApplicationHelper
       if response.code == "200"
 
         json = JSON.parse(response.body.force_encoding('UTF-8'))
-        city = json["city"]["name_ru"]
+        city = json["region"]["name_ru"]
         session[:city] = city
+        puts json
         return city
-
       else
         return "Ошибка определиния города"
       end

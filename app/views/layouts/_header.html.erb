@@ -49,23 +49,9 @@
       <div class="col-xs-12  col-sm-6">
         <div class="top__menu">
           <ul class="nav  nav-pills">
-            <li>
-
-              <%= remote_city %>
-            </li>
-            <% unless user_signed_in? %>
-              <li class="dropdown  js--mobile-dropdown">
-                <%= link_to "Login", new_user_session_path %>
-              </li>
-            <% else %>
-              <li class="dropdown  js--mobile-dropdown">
-                <a class="dropdown-toggle" href="#">
-                  <%= current_user.username %> <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
-                </ul>
-              </li>
+            <li class="dropdown  js--mobile-dropdown"><a href="#registerModal" role="button" data-toggle="modal"><%= remote_city %></a></li>
+            <% if !session[:city] %>
+              <a href="#registerModal" id="modal-open" role="button" data-toggle="modal" hidden="hidden"></a>
             <% end %>
           </ul>
         </div>
@@ -75,10 +61,64 @@
   </div>
 </div>
 
+<!-- City confirm -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content  center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3><span class="light">Ваш регион?</span> <%= remote_city %></h3>
+        <hr class="divider">
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Да, верно</button>
+        <br><br>
+        <a data-toggle="modal" role="button" href="#loginModal" data-dismiss="modal">Нет, выбрать другой город...</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- City select -->
+<div class="modal  fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content  center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3><span class="light">Выберете ваш</span> регион:</h3>
+        <hr class="divider">
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead>
+          </thead>
+          <tbody>
+          <tr>
+            <td><%= link_to "Курская область", '', class: 'secondary-link', data: {region: 'Курская область', dismiss: 'modal'}, 'aria-hidden' => 'true' %></td>
+          </tr>
+          <tr>
+            <td><%= link_to "Липецкая область", '', class: 'secondary-link', data: {region: 'Липецкая область', dismiss: 'modal'}, 'aria-hidden' => 'true' %></td>
+          </tr>
+          <tr>
+            <td><%= link_to "Орловская область", '', class: 'secondary-link', data: {region: 'Орловская область', dismiss: 'modal'}, 'aria-hidden' => 'true' %></td>
+          </tr>
+          <tr>
+            <td><%= link_to "Рязанская область", '', class: 'secondary-link', data: {region: 'Рязанская область', dismiss: 'modal'}, 'aria-hidden' => 'true' %></td>
+          </tr>
+          <tr>
+            <td><%= link_to "Другой регион...", '', class: 'secondary-link', data: {region: 'Другой регион', dismiss: 'modal'}, 'aria-hidden' => 'true' %></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <header class="header">
   <div class="container">
     <div class="row">
-      <div class="col-xs-10  col-md-6">
+      <div class="col-xs-10  col-md-5">
         <div class="header-logo">
           <%= link_to image_tag('logo.png'), root_path %>
         </div>
@@ -94,7 +134,7 @@
           </button>
         </div>
       </div>
-      <div class="col-xs-12  col-md-6">
+      <div class="col-xs-12  col-md-7">
         <nav class="navbar  navbar-default" role="navigation">
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse  navbar-collapse" id="collapsible-navbar">
@@ -113,6 +153,9 @@
                 <%= link_to "Продукция", shop_path %>
               </li>
               <li class="dropdown">
+                <%= link_to "Доставка", delivery_path %>
+              </li>
+              <li class="dropdown">
                 <%= link_to class: "dropdown-toggle" do %>Статьи<b class="caret"></b><% end %>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Статьи", main_articles_path %></li>
@@ -122,6 +165,7 @@
               <li class="dropdown">
                 <%= link_to "Контакты", contact_path %>
               </li>
+
             </ul>
             <!-- search for mobile devices -->
             <form action="#" method="post" class="visible-xs  visible-sm  mobile-navbar-form" role="form">
