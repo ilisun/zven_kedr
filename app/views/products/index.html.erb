@@ -102,13 +102,16 @@
         <div class="col-sm-2">
           <%= link_to "Добавить продукт", new_product_path, class: "btn btn-warning--reverse-transition" %>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-3">
         </div>
         <div class="col-sm-2">
           <%= link_to "Статьи", articles_path, class: "btn btn-info--transition" %>
         </div>
         <div class="col-sm-2">
           <%= link_to "Видео", videos_path, class: "btn btn-info--transition" %>
+        </div>
+        <div class="col-sm-3">
+          <%= link_to current_user.username + ' - выход', destroy_user_session_path, class: "btn btn-warning--transition", method: :delete %>
         </div>
       </div>
 

@@ -117,27 +117,48 @@
                     </h5>
                   </div>
 
-                  <div>
-                    <div class="col-xs-5">
-                      <div class="products__price">
-                        <% if product.price.nil? %>
-                          <%= link_to "Заказать", order_path(:order_name => product.name) %>
-                        <% else %>
-                          <%= product.price %> р.
-                        <% end %>
-                      </div>
-                    </div>
 
-                    <% if product.cb_old_price? && !product.price.nil? %>
+                  <% if session[:city] == 'Липецкая область' %>
+                    <div>
                       <div class="col-xs-5">
-                        <div class="products__price line-through red">
-                          <%= product.old_price %> р.
+                        <div class="products__price">
+                          <% if product.price.nil? %>
+                            <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                          <% else %>
+                            <%= product.price %> р.
+                          <% end %>
                         </div>
                       </div>
-                    <% end %>
-                  </div>
-                </div>
+                      <% if product.cb_old_price? && !product.price.nil? %>
+                        <div class="col-xs-5">
+                          <div class="products__price line-through red">
+                            <%= product.old_price %> р.
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  <% else %>
+                    <div>
+                      <div class="col-xs-5">
+                        <div class="products__price">
+                          <% if product.price_rg.nil? %>
+                            <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                          <% else %>
+                            <%= product.price_rg %> р.
+                          <% end %>
+                        </div>
+                      </div>
+                      <% if product.cb_old_price_rg? && !product.price_rg.nil? %>
+                        <div class="col-xs-5">
+                          <div class="products__price line-through red">
+                            <%= product.old_price_rg %> р.
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  <% end %>
 
+                </div>
                 <div class="products__category">
                   <% product.categories.each do |category| %>
                     <% if (category.id > 4) %>
@@ -206,21 +227,43 @@
           </div>
 
           <div>
-            <div class="col-xs-5">
-              <div class="products__price">
-                <% if product.price.nil? %>
-                  <%= link_to "Заказать", order_path(:order_name => product.name) %>
-                <% else %>
-                  <%= product.price %> р.
+            <% if session[:city] == 'Липецкая область' %>
+              <div>
+                <div class="col-xs-5">
+                  <div class="products__price">
+                    <% if product.price.nil? %>
+                      <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                    <% else %>
+                      <%= product.price %> р.
+                    <% end %>
+                  </div>
+                </div>
+                <% if product.cb_old_price? && !product.price.nil? %>
+                  <div class="col-xs-5">
+                    <div class="products__price line-through red">
+                      <%= product.old_price %> р.
+                    </div>
+                  </div>
                 <% end %>
               </div>
-            </div>
-
-            <% if product.cb_old_price? && !product.price.nil? %>
-              <div class="col-xs-5">
-                <div class="products__price line-through red">
-                  <%= product.old_price %> р.
+            <% else %>
+              <div>
+                <div class="col-xs-5">
+                  <div class="products__price">
+                    <% if product.price_rg.nil? %>
+                      <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                    <% else %>
+                      <%= product.price_rg %> р.
+                    <% end %>
+                  </div>
                 </div>
+                <% if product.cb_old_price_rg? && !product.price_rg.nil? %>
+                  <div class="col-xs-5">
+                    <div class="products__price line-through red">
+                      <%= product.old_price_rg %> р.
+                    </div>
+                  </div>
+                <% end %>
               </div>
             <% end %>
           </div>
@@ -278,22 +321,39 @@
             <% end %>
             </h5>
 
-
-            <span class="products__price--widgets">
-              <% if product.price.nil?%>
-                <%= link_to "Заказать", order_path(:name => product.name) %>
-              <% else %>
-                <%= product.price %> р.
-              <% end %>
-            </span>
-            <br>
-
-            <% if product.cb_old_price? && !product.price.nil? %>
-              <span class="products__price--widgets line-through red">
-                <%= product.old_price %> р.
+            <% if session[:city] == 'Липецкая область' %>
+              <span class="products__price--widgets">
+                <% if product.price.nil?%>
+                  <%= link_to "Заказать", order_path(:name => product.name) %>
+                <% else %>
+                  <%= product.price %> р.
+                <% end %>
               </span>
+              <br>
+
+              <% if product.cb_old_price? && !product.price.nil? %>
+                <span class="products__price--widgets line-through red">
+                  <%= product.old_price %> р.
+                </span>
+              <% end %>
+              <br><br>
+            <% else %>
+              <span class="products__price--widgets">
+                <% if product.price_rg.nil?%>
+                  <%= link_to "Заказать", order_path(:name => product.name) %>
+                <% else %>
+                  <%= product.price_rg %> р.
+                <% end %>
+              </span>
+              <br>
+
+              <% if product.cb_old_price_rg? && !product.price_rg.nil? %>
+                <span class="products__price--widgets line-through red">
+                  <%= product.old_price_rg %> р.
+                </span>
+              <% end %>
+              <br><br>
             <% end %>
-            <br><br>
 
             <span class="glyphicon glyphicon-star  star-on"></span>
             <span class="glyphicon glyphicon-star  star-on"></span>
@@ -320,20 +380,39 @@
                 <%= product.name %>
               <% end %>
             </div>
-            <span class="products__price--widgets">
-              <% if product.price.nil?%>
-                <%= link_to "Заказать", order_path(:order_name => product.name) %>
-              <% else %>
-                <%= product.price %> р.
-              <% end %>
-            </span>
-            <br>
-            <% if product.cb_old_price? && !product.price.nil? %>
-              <span class="products__price--widgets line-through red">
-                <%= product.old_price %> р.
+
+            <% if session[:city] == 'Липецкая область' %>
+              <span class="products__price--widgets">
+                <% if product.price.nil?%>
+                  <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                <% else %>
+                  <%= product.price %> р.
+                <% end %>
               </span>
+              <br>
+              <% if product.cb_old_price? && !product.price.nil? %>
+                <span class="products__price--widgets line-through red">
+                  <%= product.old_price %> р.
+                </span>
+              <% end %>
+              <br><br>
+            <% else %>
+              <span class="products__price--widgets">
+                <% if product.price_rg.nil?%>
+                  <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                <% else %>
+                  <%= product.price_rg %> р.
+                <% end %>
+              </span>
+              <br>
+              <% if product.cb_old_price_rg? && !product.price_rg.nil? %>
+                <span class="products__price--widgets line-through red">
+                  <%= product.old_price_rg %> р.
+                </span>
+              <% end %>
+              <br><br>
             <% end %>
-            <br><br>
+
             <div class="products__category">
               <% product.categories.each do |category| %>
                 <% if (category.id > 4) %>

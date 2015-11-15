@@ -6,14 +6,33 @@
       <div class="col-xs-12 col-sm-4">
         <%= f.label :Название %> <br>
         <%= f.text_field :name, class: 'form-control  form-control--contact' %> <br>
-        <%= f.label :Цена %> <br>
-        <%= f.text_field :price, class: 'form-control  form-control--contact' %> <br>
-        <%= f.check_box :cb_old_price, class: 'check_box' %>
-        <%= f.label :Старая_цена %> <br>
-        <%= f.text_field :old_price, class: 'form-control  form-control--contact' %> <br>
+        <div class="col-xs-6 col-sm-6">
+          <%= f.label :Цена %> <br>
+          <%= f.text_field :price, class: 'form-control  form-control--contact' %> <br>
+        </div>
+
+        <div class="col-xs-6 col-sm-6">
+          <%= f.check_box :cb_old_price, class: 'check_box' %>
+          <%= f.label :Старая_цена %> <br>
+          <%= f.text_field :old_price, class: 'form-control  form-control--contact' %> <br>
+        </div>
+
+        <div class="col-xs-6 col-sm-6">
+          <%= f.label :Цена_для_рег %> <br>
+          <%= f.text_field :price_rg, class: 'form-control  form-control--contact' %> <br>
+        </div>
+
+        <div class="col-xs-6 col-sm-6">
+          <%= f.check_box :cb_old_price_rg, class: 'check_box' %>
+          <%= f.label :Ст_цена_для_рег %> <br>
+          <%= f.text_field :old_price_rg, class: 'form-control  form-control--contact' %> <br>
+        </div>
+
+
         <%= f.label :Описание %> <br>
         <%= f.text_area :description, class: 'form-control  form-control--contact  form-control--big', rows: 10 %> <br>
       </div>
+
       <div class="col-xs-12 col-sm-4">
         <%= f.label :Категории %> <br>
         <hr>

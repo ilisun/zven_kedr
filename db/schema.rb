@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803135658) do
+ActiveRecord::Schema.define(version: 20151113054309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,9 @@ ActiveRecord::Schema.define(version: 20150803135658) do
     t.datetime "image_updated_at"
     t.boolean  "cb_old_price"
     t.string   "old_price"
+    t.decimal  "price_rg",           precision: 10, scale: 2
+    t.boolean  "cb_old_price_rg"
+    t.string   "old_price_rg"
   end
 
   create_table "users", force: true do |t|

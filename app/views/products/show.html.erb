@@ -56,19 +56,36 @@
             <% end %>
           </span>
           <h1 class="single-product__title"><%= @product.name %></h1>
-          <span class="single-product__price">
-            <% if @product.price.nil?%>
-              <%= link_to "Заказать", order_path(:order_name => @product.name) %>
-            <% else %>
-              <%= @product.price %> р.
-              &nbsp&nbsp
-              <% if @product.cb_old_price? && !@product.price.nil? %>
-                <span class="line-through red">
-                  <%= @product.old_price %> р.
-                </span>
+
+          <% if session[:city] == 'Липецкая область' %>
+            <span class="single-product__price">
+              <% if @product.price.nil?%>
+                <%= link_to "Заказать", order_path(:order_name => @product.name) %>
+              <% else %>
+                <%= @product.price %> р.
+                &nbsp&nbsp
+                <% if @product.cb_old_price? && !@product.price.nil? %>
+                  <span class="line-through red">
+                    <%= @product.old_price %> р.
+                  </span>
+                <% end %>
               <% end %>
-            <% end %>
-          </span>
+            </span>
+          <% else %>
+            <span class="single-product__price">
+              <% if @product.price_rg.nil?%>
+                <%= link_to "Заказать", order_path(:order_name => @product.name) %>
+              <% else %>
+                <%= @product.price_rg %> р.
+                &nbsp&nbsp
+                <% if @product.cb_old_price_rg? && !@product.price_rg.nil? %>
+                  <span class="line-through red">
+                    <%= @product.old_price_rg %> р.
+                  </span>
+                <% end %>
+              <% end %>
+            </span>
+          <% end %>
 
           <hr class="bold__divider">
           <p class="single-product__text">
@@ -111,25 +128,47 @@
                   <% end %>
                 </h5>
               </div>
-              <div>
-                <div class="col-xs-5">
-                  <div class="products__price">
-                    <% if product.price.nil?%>
-                      <%= link_to "Заказать", order_path(:order_name => product.name) %>
-                    <% else %>
-                      <%= product.price %> р.
-                    <% end %>
-                  </div>
-                </div>
 
-                <% if product.cb_old_price? && !product.price.nil? %>
+              <% if session[:city] == 'Липецкая область' %>
+                <div>
                   <div class="col-xs-5">
-                    <div class="products__price line-through red">
-                      <%= product.old_price %> р.
+                    <div class="products__price">
+                      <% if product.price.nil? %>
+                        <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                      <% else %>
+                        <%= product.price %> р.
+                      <% end %>
                     </div>
                   </div>
-                <% end %>
-              </div>
+                  <% if product.cb_old_price? && !product.price.nil? %>
+                    <div class="col-xs-5">
+                      <div class="products__price line-through red">
+                        <%= product.old_price %> р.
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              <% else %>
+                <div>
+                  <div class="col-xs-5">
+                    <div class="products__price">
+                      <% if product.price_rg.nil? %>
+                        <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                      <% else %>
+                        <%= product.price_rg %> р.
+                      <% end %>
+                    </div>
+                  </div>
+                  <% if product.cb_old_price_rg? && !product.price_rg.nil? %>
+                    <div class="col-xs-5">
+                      <div class="products__price line-through red">
+                        <%= product.old_price_rg %> р.
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+
             </div>
             <div class="products__category">
               <% product.categories.each do |category| %>

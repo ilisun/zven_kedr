@@ -84,23 +84,43 @@
                   </div>
                 </figure>
                 <div class="row">
-                  <div class="col-xs-6">
-                    <% if product.cb_old_price? && !product.price.nil? %>
-                      <div class="products__price line-through red">
-                        <%= product.old_price %> р.
-                      </div>
-                    <% end %>
-                  </div>
 
-                  <div class="col-xs-6">
-                    <div class="products__price">
-                      <% if product.price.nil?%>
-                        <%= link_to "Заказать", order_path(:order_name => product.name) %>
-                      <% else %>
-                        <%= product.price %> р.
+                  <% if session[:city] == 'Липецкая область' %>
+                    <div class="col-xs-6">
+                      <% if product.cb_old_price? && !product.price.nil? %>
+                        <div class="products__price line-through red">
+                          <%= product.old_price %> р.
+                        </div>
                       <% end %>
                     </div>
-                  </div>
+                    <div class="col-xs-6">
+                      <div class="products__price">
+                        <% if product.price.nil?%>
+                          <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                        <% else %>
+                          <%= product.price %> р.
+                        <% end %>
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="col-xs-6">
+                      <% if product.cb_old_price_rg? && !product.price_rg.nil? %>
+                        <div class="products__price line-through red">
+                          <%= product.old_price_rg %> р.
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="col-xs-6">
+                      <div class="products__price">
+                        <% if product.price_rg.nil?%>
+                          <%= link_to "Заказать", order_path(:order_name => product.name) %>
+                        <% else %>
+                          <%= product.price_rg %> р.
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
+
                   <div class="col-xs-12">
                     <h5 class="products__title">
                       <%= link_to product, class: "products__link  js--isotope-title" do %>

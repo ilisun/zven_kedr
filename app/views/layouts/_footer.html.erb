@@ -25,23 +25,10 @@
               <li><%= link_to "Производство", prod_path %></li>
               <li><%= link_to "Продукция", shop_path %></li>
               <li><%= link_to "Контакты", contact_path %></li>
-              <% unless user_signed_in? %>
-                <li class="dropdown  js--mobile-dropdown">
-                  <%= link_to "Login", new_user_session_path %>
-                </li>
-              <% else %>
-                <li class="dropdown  js--mobile-dropdown">
-                  <a class="dropdown-toggle" href="#">
-                    <%= current_user.username %> <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
-                  </ul>
-                </li>
-              <% end %>
               <% if user_signed_in? %>
                 <li><%= link_to "Админка", products_path %></li>
               <% end %>
+              <li><%= link_to "Login", new_user_session_path %></li>
             </ul>
           </nav>
         </div>
